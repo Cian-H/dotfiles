@@ -7,7 +7,8 @@ return { -- General programming utilities go here
             override = function(root_dir, library)
                 if
                     root_dir:find(
-                        os.getenv("XDG_CONFIG_HOME") .. "/nix/home-manager/dotfiles/.config/nvim/",
+                        os.getenv("XDG_CONFIG_HOME")
+                            .. "/nix/home-manager/core/dotfiles/dot_config/nvim/",
                         1,
                         true
                     ) == 1
@@ -21,10 +22,23 @@ return { -- General programming utilities go here
     -- Privilege escalation plugin
     { "lambdalisue/suda.vim", event = "VeryLazy" },
     {
+        "folke/trouble.nvim",
+        cmd = { "Trouble" },
+        opts = {
+            modes = {
+                lsp = {
+                    win = { position = "right" },
+                },
+            },
+        },
+        keys = require("config.keys").trouble,
+    },
+    {
         "folke/todo-comments.nvim",
+        cmd = { "TodoTrouble", "TodoTelescope" },
         event = "VimEnter",
         dependencies = { "nvim-lua/plenary.nvim" },
-        opts = { signs = false },
+        keys = require("config.keys").todo_comments,
     },
     "tpope/vim-fugitive", -- Also want to add fugitive, since it's apparently a great git plugin
     "jlfwong/vim-mercenary", -- Mercenary is the mercurial equivalent of fugitive
@@ -60,8 +74,9 @@ return { -- General programming utilities go here
         keys = require("config.keys").harpoon,
     },
     -- Snippets
-    { "SirVer/ultisnips", events = "VeryLazy" },
-    { "honza/vim-snippets", events = "VeryLazy" },
+    "SirVer/ultisnips",
+    "honza/vim-snippets",
+    "rafamadriz/friendly-snippets",
     { -- Package and devenv plugins
         "danymat/neogen",
         event = "VimEnter",
@@ -198,24 +213,17 @@ return { -- General programming utilities go here
         build = ":TSUpdate",
         opts = {
             ensure_installed = { "bash", "c", "html", "lua", "markdown", "vim", "vimdoc" },
-            -- Autoinstall languages that are not installed
             auto_install = true,
             highlight = { enable = true },
             indent = { enable = true },
         },
         config = function(_, opts)
-            -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-
             ---@diagnostic disable-next-line: missing-fields
             require("nvim-treesitter.configs").setup(opts)
-
-            -- There are additional nvim-treesitter modules that you can use to interact
-            -- with nvim-treesitter. You should go explore a few and see what interests you:
-            --
-            --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-            --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-            --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
         end,
+        dependencies = {
+            { "nushell/tree-sitter-nu", build = ":TSUpdate nu" },
+        },
     },
     { -- Undo tree
         "mbbill/undotree",
