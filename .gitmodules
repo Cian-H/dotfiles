@@ -1,3 +1,6 @@
 [submodule "dot_config/nushell/nu_scripts"]
 	path = dot_config/nushell/nu_scripts
 	url = https://github.com/nushell/nu_scripts
+[submodule "dot_config/nvim"]
+	path = dot_config/nvim
+	url = https://github.com/Cian-H/my_nvim_config
