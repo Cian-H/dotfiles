@@ -3,8 +3,6 @@ name: Submodule push
 on:
   push:
     branches: [ main ]
-    paths:
-      - "home-manager/core/dotfiles/**"
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
