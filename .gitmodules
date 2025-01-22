@@ -4,3 +4,6 @@
 [submodule "dot_config/nvim"]
 	path = dot_config/nvim
 	url = https://github.com/Cian-H/my_nvim_config
+[submodule "dot_config/micro/plug/filemanager"]
+	path = dot_config/micro/plug/filemanager
+	url = https://github.com/NicolaiSoeborg/filemanager-plugin.git
