@@ -42,21 +42,6 @@ return { -- General programming utilities go here
     },
     "tpope/vim-fugitive", -- Also want to add fugitive, since it's apparently a great git plugin
     "jlfwong/vim-mercenary", -- Mercenary is the mercurial equivalent of fugitive
-    {
-        "kdheepak/lazygit.nvim",
-        cmd = {
-            "LazyGit",
-            "LazyGitConfig",
-            "LazyGitCurrentFile",
-            "LazyGitFilter",
-            "LazyGitFilterCurrentFile",
-        },
-        -- optional for floating window border decoration
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-        keys = require("config.keys").lazygit,
-    },
     { -- Oil is a very nice buffer-based filetree editor
         "stevearc/oil.nvim",
         event = "VeryLazy",
@@ -167,19 +152,19 @@ return { -- General programming utilities go here
                 -- No, but seriously. Please read `:help ins-completion`, it is really good!
                 mapping = cmp.mapping.preset.insert({
                     -- Select the [n]ext item
-                    ["<C-n>"] = cmp.mapping.select_next_item(),
+                    ["<M-n>"] = cmp.mapping.select_next_item(),
                     -- Select the [p]revious item
-                    ["<C-p>"] = cmp.mapping.select_prev_item(),
+                    ["<M-p>"] = cmp.mapping.select_prev_item(),
 
                     -- Accept ([y]es) the completion.
                     --  This will auto-import if your LSP supports it.
                     --  This will expand snippets if the LSP sent a snippet.
-                    ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+                    ["<M-y>"] = cmp.mapping.confirm({ select = true }),
 
                     -- Manually trigger a completion from nvim-cmp.
                     --  Generally you don't need this, because nvim-cmp will display
                     --  completions whenever it has completion options available.
-                    ["<C-Space>"] = cmp.mapping.complete({}),
+                    ["<M-Space>"] = cmp.mapping.complete({}),
 
                     -- Think of <c-l> as moving to the right of your snippet expansion.
                     --  So if you have a snippet that's like:
@@ -189,12 +174,12 @@ return { -- General programming utilities go here
                     --
                     -- <c-,> will move you to the right of each of the expansion locations.
                     -- <c-.> is similar, except moving you backwards.
-                    ["<C-,>"] = cmp.mapping(function()
+                    ["<M-,>"] = cmp.mapping(function()
                         if luasnip.expand_or_locally_jumpable() then
                             luasnip.expand_or_jump()
                         end
                     end, { "i", "s" }),
-                    ["<C-.>"] = cmp.mapping(function()
+                    ["<M-.>"] = cmp.mapping(function()
                         if luasnip.locally_jumpable(-1) then
                             luasnip.jump(-1)
                         end

@@ -98,12 +98,12 @@ return { -- UI components and other visual elements are declared here
                         {
                             "harpoon2",
                             icon = "󰛢",
-                            indicators = { "H", "J", "K", "L" },
+                            indicators = { "A", "S", "D", "F" },
                             active_indicators = {
-                                "%#LualineHarpoonActive#H%*",
-                                "%#LualineHarpoonActive#J%*",
-                                "%#LualineHarpoonActive#K%*",
-                                "%#LualineHarpoonActive#L%*",
+                                "%#LualineHarpoonActive#A%*",
+                                "%#LualineHarpoonActive#S%*",
+                                "%#LualineHarpoonActive#D%*",
+                                "%#LualineHarpoonActive#F%*",
                             },
                             _separator = "∙",
                             no_harpoon = "Harpoon not loaded",

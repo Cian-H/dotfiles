@@ -2,3 +2,10 @@ mod? nix "~/.config/nix"
 
 default:
     @just -g --list
+
+update-homeserver:
+    ssh homeserver just -g nix prebuild
+    ssh root@homeserver chown -R root:nixcfg /home/cianh/.config/nix/
+    ssh root@homeserver just -g update-root
+    ssh root@homeserver chown -R cianh:nixcfg /home/cianh/.config/nix/
+    ssh homeserver just -g nix _update-home

@@ -7,6 +7,7 @@ return {
         { "<leader>r", group = "[R]ename" },
         { "<leader>w", group = "[W]orkspace" },
         { "<leader>t", group = "[T]ree" },
+        { "<leader>l", group = "[L]azyGit" },
         { "<leader>o", group = "[O]verseer" },
         { "<leader>h", group = "[H]arpoon" },
         { "<leader>x", group = "[X] Trouble" },
@@ -41,7 +42,7 @@ return {
             mode = "n",
         },
         {
-            "<C-h>",
+            "<A-a>",
             function()
                 require("harpoon"):list():select(1)
             end,
@@ -49,7 +50,7 @@ return {
             mode = "n",
         },
         {
-            "<C-j>",
+            "<A-s>",
             function()
                 require("harpoon"):list():select(2)
             end,
@@ -57,7 +58,7 @@ return {
             mode = "n",
         },
         {
-            "<C-k>",
+            "<A-d>",
             function()
                 require("harpoon"):list():select(3)
             end,
@@ -65,7 +66,7 @@ return {
             mode = "n",
         },
         {
-            "<C-l>",
+            "<A-f>",
             function()
                 require("harpoon"):list():select(4)
             end,
@@ -74,7 +75,30 @@ return {
         },
     },
     lazygit = {
-        { "<leader>l", "<cmd>LazyGit<cr>", desc = "[L]azyGit", mode = "n" },
+        {
+            "<leader>lg",
+            function()
+                vim.api.nvim_command("lua Snacks.lazygit()")
+            end,
+            desc = "[L]azy[G]it",
+            mode = "n",
+        },
+        {
+            "<leader>ll",
+            function()
+                vim.api.nvim_command("lua Snacks.lazygit.log()")
+            end,
+            desc = "[L]azyGit [L]og",
+            mode = "n",
+        },
+        {
+            "<leader>lf",
+            function()
+                vim.api.nvim_command("lua Snacks.lazygit.log_file()")
+            end,
+            desc = "[L]azyGit [F]ile Log",
+            mode = "n",
+        },
     },
     neogen = {
         {
