@@ -10,3 +10,6 @@
 [submodule "dot_config/micro/plug/jlabbrev"]
 	path = dot_config/micro/plug/jlabbrev
 	url = https://github.com/MasFlam/jlabbrev.git
+[submodule "dot_config/micro/plug/lsp"]
+	path = dot_config/micro/plug/lsp
+	url = https://github.com/AndCake/micro-plugin-lsp.git
