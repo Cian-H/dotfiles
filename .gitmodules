@@ -7,3 +7,6 @@
 [submodule "dot_config/micro/plug/filemanager"]
 	path = dot_config/micro/plug/filemanager
 	url = https://github.com/NicolaiSoeborg/filemanager-plugin.git
+[submodule "dot_config/micro/plug/jlabbrev"]
+	path = dot_config/micro/plug/jlabbrev
+	url = https://github.com/MasFlam/jlabbrev.git
