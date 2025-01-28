@@ -2,6 +2,13 @@ def get_env [s: string]: string -> string {
     try { $env | get --ignore-errors $s } catch { "" }
 }
 
+def get_status []: nothing -> string {
+    match (get_env "LAST_EXIT_CODE") {
+        "0" => "0",
+        _ => "1",
+    }
+}
+
 export def create_left_prompt []: nothing -> string  {
     ^starship prompt --cmd-duration (get_env "CMD_DURATION_MS") --status (get_env "LAST_EXIT_CODE") --terminal-width (term size).columns
 }
