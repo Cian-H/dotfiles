@@ -1,6 +1,6 @@
 [{
     "output": "!DP-6",
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     "height": 43,
     "margin-top": 6,
