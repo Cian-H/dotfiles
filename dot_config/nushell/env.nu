@@ -5,6 +5,7 @@
 use ~/.config/nushell/prompt.nu *
 
 # Use nushell functions to define your right and left prompt
+$env.STARSHIP_SHELL = "nu"
 $env.PROMPT_COMMAND = {|| create_left_prompt }
 $env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
 
