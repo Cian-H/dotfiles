@@ -9,5 +9,6 @@ keybind = ctrl+h=previous_tab
 keybind = ctrl+left=previous_tab
 keybind = ctrl+l=next_tab
 keybind = ctrl+right=next_tab
+keybind = ctrl+q=close_tab
 keybind = ctrl+space=toggle_quick_terminal
 keybind = global:ctrl+space=toggle_quick_terminal
