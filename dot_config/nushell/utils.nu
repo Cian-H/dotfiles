@@ -1,8 +1,8 @@
-export def 'exists' [ app ]: string -> bool {
+export def 'exists' [ app ] {
     not (which $app | is-empty)
 }
 
-export def 'sysfetch' []: nothing -> nothing {
+export def 'sysfetch' [] {
     if (exists fastfetch) {
         if (("kitty" in $env.TERM) or ("ghostty" in $env.TERM)) and ($"($env.HOME)/.config/fastfetch/kitty.jsonc" | path exists) {
             fastfetch --load-config $"($env.HOME)/.config/fastfetch/kitty.jsonc"
@@ -23,7 +23,7 @@ export def 'sysfetch' []: nothing -> nothing {
     }
 }
 
-export def 'register-plugins' []: nothing -> nothing {
+export def 'register-plugins' [] {
     for plugin_dir in $env.NU_PLUGIN_DIRS {
         for plugin_path in (ls $"($env.NU_PLUGIN_DIRS.0)/nu_plugin_*").name {
             nu -c $"register ($plugin_path)"
@@ -31,7 +31,7 @@ export def 'register-plugins' []: nothing -> nothing {
     }
 }
 
-export def 'build-plugins' []: nothing -> nothing {
+export def 'build-plugins' [] {
     let curdir = pwd
     let plugin_dir = $env.NU_PLUGIN_DIRS.0
     cd $plugin_dir
@@ -40,7 +40,7 @@ export def 'build-plugins' []: nothing -> nothing {
     register-plugins
 }
 
-export def 'install-default-plugins' []: nothing -> nothing {
+export def 'install-default-plugins' [] {
     [ nu_plugin_inc
       nu_plugin_polars
       # nu_plugin_gstat

@@ -1,24 +1,24 @@
-def get_env [s: string]: string -> any {
+def get_env [s: string] {
     try { $env | get --ignore-errors $s } catch { "" }
 }
 
-export def was_successful []: nothing -> bool {
+export def was_successful [] {
     (get_env "LAST_EXIT_CODE") == 0
 }
 
-export def create_left_prompt []: nothing -> string  {
+export def create_left_prompt [] {
     ^starship prompt --cmd-duration (get_env "CMD_DURATION_MS") $'--status=($env.LAST_EXIT_CODE)' --terminal-width (term size).columns
 }
 
-export def create_right_prompt []: nothing -> string  {
+export def create_right_prompt [] {
     ^starship prompt --right --cmd-duration (get_env "CMD_DURATION_MS") $'--status=($env.LAST_EXIT_CODE)' --terminal-width (term size).columns
 }
 
-export def create_continuation_prompt []: nothing -> string  {
+export def create_continuation_prompt [] {
     ^starship prompt --continuation --cmd-duration (get_env "CMD_DURATION_MS") $'--status=($env.LAST_EXIT_CODE)' --terminal-width (term size).columns
 }
 
-def parse_ms_to_human_readable [ms: string]: string -> string  {
+def parse_ms_to_human_readable [ms: string] {
     if $ms == "" {
         $ms
     } else {
@@ -37,13 +37,13 @@ def parse_ms_to_human_readable [ms: string]: string -> string  {
     }
 }
 
-export def create_transient_prompt_left []: nothing -> string  {
+export def create_transient_prompt_left [] {
     if (was_successful) {
         $"(ansi green_bold)󱔳(ansi reset)"
     } else {
         $"(ansi red_bold)󱔷(ansi reset)"
     }
 }
-export def create_transient_prompt_indicator []: nothing -> string {
+export def create_transient_prompt_indicator [] {
     $"(ansi blue_bold) 󰔛 (parse_ms_to_human_readable (get_env "CMD_DURATION_MS")) (if (was_successful) { ansi green_bold } else { ansi red_bold })(ansi reset) "
 }
