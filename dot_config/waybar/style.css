@@ -1,12 +1,12 @@
 /* Define constants for stylesheet */
-@define-color base           rgb(26, 27, 38);
-@define-color text-color     #7aa2f7;
-@define-color text-color-2   rgba(169, 177, 214, 1);
-@define-color urgent         #b02c36;
+@define-color base rgb(26, 27, 38);
+@define-color text-color #7aa2f7;
+@define-color text-color-2 rgba(169, 177, 214, 1);
+@define-color urgent #b02c36;
 @define-color primary_orange #fe9000;
 @define-color primary_yellow #ffdd4a;
-@define-color primary_red    #da1b2b;
-@define-color primary_blue   #afd2e9;
+@define-color primary_red #da1b2b;
+@define-color primary_blue #afd2e9;
 @define-color primary_blue_2 #6fadd6;
 
 @keyframes blink-warning {
@@ -22,7 +22,7 @@
 
 @keyframes blink-critical {
     70% {
-      color: white;
+        color: white;
     }
 
     to {
@@ -33,7 +33,7 @@
 
 /* Base style */
 * {
-    font-family: "MonaspiceArgonNerdFontMono-Bold", Cantarell, Noto Sans, sans-serif;
+    font-family: "MonaspiceArNerdFontMono-Bold", Cantarell, Noto Sans, sans-serif;
     font-size: 16px;
     border: none;
     border-radius: 0;
@@ -44,8 +44,8 @@
 }
 
 tooltip {
-     border-radius: 8px;
-     background-color: @base;
+    border-radius: 8px;
+    background-color: @base;
 }
 
 .modules-center {
@@ -53,7 +53,9 @@ tooltip {
 }
 
 /* Custom font size for builtin display */
-window.eDP-1 * { font-size: 12px; }
+window.eDP-1 * {
+    font-size: 12px;
+}
 
 #window {
     padding: 0 8px;
@@ -63,7 +65,7 @@ window.eDP-1 * { font-size: 12px; }
     background: transparent;
     color: @text-color;
     background-color: @base;
-    font-family: "MonaspiceArgonNerdFontMono";
+    font-family: "MonaspiceArNerdFontMono";
     font-size: 16px;
     border-radius: 8px;
 }
@@ -105,13 +107,13 @@ window.eDP-1 * { font-size: 12px; }
 #workspaces button {
     border-bottom: 3px solid @primary_blue_2;
     margin-bottom: 0px;
-    padding:0px;
+    padding: 0px;
 }
 
 #workspaces button.focused {
-    border-bottom: 3px solid  @primary_yellow;
+    border-bottom: 3px solid @primary_yellow;
     margin-bottom: 0px;
-    padding-left:0;
+    padding-left: 0;
 }
 
 #workspaces button.urgent {
@@ -140,7 +142,7 @@ window.eDP-1 * { font-size: 12px; }
 #custom-mail,
 #custom-media,
 #custom-notification {
-    padding:0.5rem 0.6rem;
+    padding: 0.5rem 0.6rem;
     margin: 1px 0px;
 }
 
@@ -185,14 +187,14 @@ window.eDP-1 * { font-size: 12px; }
 
 #memory.warning {
     color: @primary_orange;
- }
+}
 
 #memory.critical {
     color: red;
     animation-name: blink-critical;
     animation-duration: 2s;
-    padding-left:5px;
-    padding-right:5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #network.disconnected {
@@ -210,4 +212,3 @@ window.eDP-1 * { font-size: 12px; }
 #window {
     font-weight: bold;
 }
-
