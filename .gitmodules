@@ -13,3 +13,30 @@
 [submodule "dot_config/micro/plug/lsp"]
 	path = dot_config/micro/plug/lsp
 	url = https://github.com/AndCake/micro-plugin-lsp.git
+[submodule "dot_config/yazi/plugins/hexyl.yazi"]
+	path = dot_config/yazi/plugins/hexyl.yazi
+	url = https://github.com/Reledia/hexyl.yazi
+[submodule "dot_config/yazi/flavors/tokyo-night.yazi"]
+	path = dot_config/yazi/flavors/tokyo-night.yazi
+	url = https://github.com/BennyOe/tokyo-night.yazi.git
+[submodule "dot_config/yazi/plugins/sudo.yazi"]
+	path = dot_config/yazi/plugins/sudo.yazi
+	url = https://github.com/TD-Sky/sudo.yazi
+[submodule "dot_config/yazi/plugins/core"]
+	path = dot_config/yazi/plugins/core
+	url = https://github.com/yazi-rs/plugins
+[submodule "dot_config/yazi/plugins/ouch.yazi"]
+	path = dot_config/yazi/plugins/ouch.yazi
+	url = https://github.com/ndtoan96/ouch.yazi
+[submodule "dot_config/yazi/plugins/starship.yazi"]
+	path = dot_config/yazi/plugins/starship.yazi
+	url = https://github.com/Rolv-Apneseth/starship.yazi
+[submodule "dot_config/yazi/plugins/glow.yazi"]
+	path = dot_config/yazi/plugins/glow.yazi
+	url = https://github.com/Reledia/glow.yazi
+[submodule "dot_config/yazi/plugins/wl-clipboard.yazi"]
+	path = dot_config/yazi/plugins/wl-clipboard.yazi
+	url = https://github.com/grappas/wl-clipboard.yazi
+[submodule "dot_config/yazi/plugins/rich-preview.yazi"]
+	path = dot_config/yazi/plugins/rich-preview.yazi
+	url = https://github.com/AnirudhG07/rich-preview.yazi
