@@ -40,3 +40,6 @@
 [submodule "dot_config/yazi/plugins/rich-preview.yazi"]
 	path = dot_config/yazi/plugins/rich-preview.yazi
 	url = https://github.com/AnirudhG07/rich-preview.yazi
+[submodule "dot_config/yazi/plugins/max-preview.yazi"]
+	path = dot_config/yazi/plugins/max-preview.yazi
+	url = https://github.com/SUSTech-data/max-preview.yazi
