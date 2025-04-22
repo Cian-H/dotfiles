@@ -31,8 +31,9 @@ show_always = true
 [package]
 disabled = true
 
-# Finally, manually add slightly modified swttings from the nerdfonts preset config
+# Finally, manually add slightly modified settings from the nerdfonts preset config
 [aws]
+disabled = true
 symbol = "  "
 
 [buf]
