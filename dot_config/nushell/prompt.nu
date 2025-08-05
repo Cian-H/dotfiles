@@ -1,5 +1,5 @@
 def get_env [s: string] {
-    try { $env | get --ignore-errors $s } catch { "" }
+    try { $env | get --optional $s } catch { "" }
 }
 
 export def was_successful [] {
