@@ -55,4 +55,5 @@ export def 'start-lab-session' [
     let task_id = pueue add -p ghostty -e zellij attach --index 0 -c $session_name
     zellij attach --index 0 -c $session_name
     pueue kill $task_id
+    pueue rm $task_id
 }
