@@ -2,7 +2,7 @@
 #
 # version = "0.89.0"
 
-use ~/.config/nushell/prompt.nu *
+use prompt.nu *
 
 # Use nushell functions to define your right and left prompt
 $env.STARSHIP_SHELL = "nu"
@@ -40,7 +40,7 @@ $env.ENV_CONVERSIONS = {
 # Directories to search for scripts when calling source or use
 # The default for this is $nu.default-config-dir/scripts
 $env.NU_LIB_DIRS = [
-    ($nu.default-config-dir | path join "scripts"), # add <nushell-config-dir>/scripts
+    ($env.FILE_PWD | path join "scripts"), # add <nushell-config-dir>/scripts
 ]
 
 # Directories to search for plugin binaries when calling register
@@ -77,7 +77,7 @@ $env.PATH = (
     $env.PATH
     | split row (char esep)
     | append (
-        open $"($nu.default-config-dir)/path.env"
+        open ($env.FILE_PWD | path join "path.env")
         | from csv --noheaders --trim all
         | get "column0"
         | path expand --no-symlink
