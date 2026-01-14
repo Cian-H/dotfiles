@@ -33,6 +33,9 @@ export alias bashpoem = poetry run bash
 export alias nupoem = poetry run nu
 export alias jupyterpoem = poetry run jupyter
 
+# Aliases for nushell plugins
+export alias pl = polars
+
 # Who even uses vim or *especially* vi in this day and age?
 export alias vim = nvim
 export alias vi = nvim
