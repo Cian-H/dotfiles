@@ -1,0 +1,43 @@
+theme = "tokyo-night"
+
+[window]
+width = 450
+height = 400
+
+[keybinds]
+quick_activate = ["1", "2", "3", "4", "5"]
+
+[placeholders.default]
+input = " Search..."
+list = "No Results"
+
+[columns]
+symbols = 1
+
+[providers]
+max_results = 256
+default = ["desktopapplications", "websearch"]
+
+[[providers.prefixes]]
+prefix = "/"
+provider = "providerlist"
+
+[[providers.prefixes]]
+prefix = "."
+provider = "files"
+
+[[providers.prefixes]]
+prefix = ":"
+provider = "symbols"
+
+[[providers.prefixes]]
+prefix = "="
+provider = "calc"
+
+[[providers.prefixes]]
+prefix = "@"
+provider = "websearch"
+
+[[providers.prefixes]]
+prefix = "$"
+provider = "clipboard"

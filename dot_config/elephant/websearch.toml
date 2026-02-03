@@ -1,0 +1,19 @@
+[[entries]]
+name = "Qwant"
+url = "https://www.qwant.com/?q=%TERM%"
+default = true
+
+[[entries]]
+name = "Wikipedia"
+url = "https://en.wikipedia.org/wiki/Special:Search?search=%TERM%"
+default = false
+
+[[entries]]
+name = "Nix Packages"
+url = "https://search.nixos.org/packages?channel=unstable&query=%TERM%"
+default = false
+
+[[entries]]
+name = "Nix Options"
+url = "https://search.nixos.org/options?channel=unstable&query=%TERM%"
+default = false
