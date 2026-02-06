@@ -1,4 +1,6 @@
 theme = "tokyo-night"
+hide_action_hints = true
+hide_action_hints_dmenu = true
 
 [window]
 width = 450
@@ -13,10 +15,6 @@ list = "No Results"
 
 [columns]
 symbols = 1
-
-[search]
-history = true
-frecency = true
 
 [providers]
 max_results = 256
