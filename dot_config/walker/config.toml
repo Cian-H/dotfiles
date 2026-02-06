@@ -14,6 +14,10 @@ list = "No Results"
 [columns]
 symbols = 1
 
+[search]
+history = true
+frecency = true
+
 [providers]
 max_results = 256
 default = ["desktopapplications", "websearch"]
