@@ -56,7 +56,6 @@ source ../nu_scripts/custom-completions/auto-generate/completions/nl.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/nm.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/nmap.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/nmcli.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/npkg.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/nvim.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/objdump.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/optimus-manager.nu
