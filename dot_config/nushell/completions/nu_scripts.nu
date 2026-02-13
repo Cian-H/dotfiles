@@ -139,7 +139,6 @@ source ../nu_scripts/custom-completions/man/man-completions.nu
 source ../nu_scripts/custom-completions/mix/mix-completions.nu
 source ../nu_scripts/custom-completions/mvn/mvn-completions.nu
 source ../nu_scripts/custom-completions/nano/nano-completions.nu
-source ../nu_scripts/custom-completions/nano/nano.nu
 source ../nu_scripts/custom-completions/nix/nix-completions.nu
 source ../nu_scripts/custom-completions/podman/podman-completions.nu
 source ../nu_scripts/custom-completions/poetry/poetry-completions.nu
