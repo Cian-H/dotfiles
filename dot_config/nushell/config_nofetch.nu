@@ -9,5 +9,5 @@ $env.config = (
 source nu_scripts.nu
 # Finally, initialise the completion plugins
 source completions/atuin.nu
-source completions/zoxide.nu
+source completions/rbw.nu
 source completions/nu_scripts.nu
