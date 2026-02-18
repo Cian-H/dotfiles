@@ -123,6 +123,14 @@ sysfetch() {
     fi
 }
 
+# --- Simple, Self-Bootstrapping Syntax Highlighting ---
+ZSH_SH_DIR="$HOME/.local/share/zsh-syntax-highlighting"
+if [ ! -d "$ZSH_SH_DIR" ]; then
+    echo "Cloning zsh-syntax-highlighting..."
+    git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_SH_DIR" > /dev/null 2>&1
+fi
+[ -f "$ZSH_SH_DIR/zsh-syntax-highlighting.zsh" ] && source "$ZSH_SH_DIR/zsh-syntax-highlighting.zsh"
+
 # Starship Prompt
 if command -v starship >/dev/null 2>&1; then
     eval "$(starship init zsh)"
