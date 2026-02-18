@@ -8,6 +8,15 @@ continuation_prompt = "[󰾗━ ](yellow)"
 success_symbol = "[󱔳](bold green) "
 error_symbol = "[󱔷](bold red) "
 
+[shell]
+disabled = false
+format = "$indicator "
+bash_indicator = "[](bold green)"
+fish_indicator = "[](bold cyan)"
+zsh_indicator = "[%](bold yellow)"
+nu_indicator = "[❯](bold purple)"
+powershell_indicator = "[](bold blue)"
+
 [cmd_duration]
 min_time = 0
 show_milliseconds = true
