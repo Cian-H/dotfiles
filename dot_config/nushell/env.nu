@@ -62,7 +62,6 @@ if $nu.os-info.name != "windows" {
 }
 $env.PASSWORD_STORE_DIR = $"($env.HOME)/.cache/password-store"
 $env.GLAMOUR_STYLE = $"($env.XDG_CONFIG_HOME)/glamour/tokyo_night.json"
-$env.RYE_HOME = $"($env.XDG_CONFIG_HOME)/.rye"
 # Config for less
 $env.LESS_TERMCAP_mb = (ansi --escape "01;31m")     # begin blinking
 $env.LESS_TERMCAP_md = (ansi --escape "01;31m")     # begin bold
