@@ -20,10 +20,8 @@ set -gx LESS_TERMCAP_se (printf "\e[0m")
 set -gx LESS_TERMCAP_us (printf "\e[00;36m")
 set -gx LESS_TERMCAP_ue (printf "\e[0m")
 
-fish_add_path ~/.local/bin
-fish_add_path ~/.cargo/bin
-fish_add_path ~/.poetry/bin
-fish_add_path ~/.ghcup/bin
-fish_add_path ~/.nix-profile/bin
-fish_add_path /nix/var/nix/profiles/default/bin
-fish_add_path /opt/miniconda3/bin
+if test -f ~/.config/path.env
+    for dir in (cat ~/.config/path.env)
+        eval fish_add_path -m $dir
+    end
+end

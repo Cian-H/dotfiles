@@ -23,18 +23,16 @@ export LESS_TERMCAP_us=$'\e[00;36m'
 export LESS_TERMCAP_ue=$'\e[0m'
 
 # --- Path Configuration ---
+if [[ -f ~/.config/path.env ]]; then
+    for dir in $(cat ~/.config/path.env); do
+        expanded_dir=${~dir}
+        if [[ -d $expanded_dir ]]; then
+            path=($expanded_dir $path)
+        fi
+    done
+fi
+
 typeset -U path
-path=(
-  /opt/miniconda3/bin
-  /nix/var/nix/profiles/default/bin
-  $HOME/.nix-profile/bin
-  $HOME/.ghcup/bin
-  $HOME/.poetry/bin
-  $HOME/.cargo/bin
-  $HOME/.local/bin
-  $path
-)
-export PATH
 
 # --- Zsh Settings ---
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh_history"

@@ -76,7 +76,7 @@ $env.PATH = (
     $env.PATH
     | split row (char esep)
     | append (
-        open ($env.FILE_PWD | path join "path.env")
+        open ($env.XDG_CONFIG_HOME | path join "path.env")
         | from csv --noheaders --trim all
         | get "column0"
         | path expand --no-symlink
