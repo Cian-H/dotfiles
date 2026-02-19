@@ -31,3 +31,6 @@
     insteadOf = gh:
 [url "https://gitlab.com/Cian-H/"]
     insteadOf = gl:
+[credential "https://github.com"]
+    helper =
+    helper = !/usr/bin/env gh auth git-credential
