@@ -2,6 +2,7 @@ theme = dark:TokyoNight Night,light:TokyoNight Day
 font-family = MonaspiceNe Nerd Font Mono
 font-size = 16.0
 desktop-notifications = false
+initial-window = false
 quit-after-last-window-closed = false
 
 font-feature = +liga
