@@ -10,7 +10,7 @@ source ../nu_scripts/custom-completions/auto-generate/completions/conda.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/conjure.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/convert.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/dconf.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/dd.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/dd.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/diff.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/dmesg.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/dnf.nu
@@ -32,7 +32,7 @@ source ../nu_scripts/custom-completions/auto-generate/completions/julia.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/kill.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/killall.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/ln.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/localectl.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/localectl.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/lsblk.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/lua.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/lz4.nu
@@ -56,18 +56,18 @@ source ../nu_scripts/custom-completions/auto-generate/completions/nl.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/nm.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/nmap.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/nmcli.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/nvim.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/nvim.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/objdump.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/optimus-manager.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/optimus-manager.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/pacaur.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/pacman-color.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/pacman-key.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/pacman-color.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/pacman-key.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/pacman.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/patch.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/pgrep.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/ping.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/pinky.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/poweroff.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/poweroff.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/ps.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/python.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/python3.nu
@@ -81,42 +81,42 @@ source ../nu_scripts/custom-completions/auto-generate/completions/rsync.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/rustc.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/sbcl.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/scp.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/setfacl.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/setsid.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/setfacl.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/setsid.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/sftp.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/sha1sum.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/sha224sum.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/sha256sum.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/sha384sum.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/sha512sum.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/sha1sum.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/sha224sum.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/sha256sum.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/sha384sum.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/sha512sum.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/ssh.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/sshfs.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/strace.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/strace.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/stream.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/su.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/sudo.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/su.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/sudo.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/systemctl.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/test.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/time.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/timedatectl.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/timedatectl.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/timeout.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/top.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/tracepath.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/traceroute.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/udevadm.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/top.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/tracepath.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/traceroute.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/udevadm.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/umount.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/unexpand.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/unexpand.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/unlz4.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/unzip.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/unzstd.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/useradd.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/userdbctl.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/usermod.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/w.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/useradd.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/userdbctl.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/usermod.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/w.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/wget.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/whatis.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/who.nu
-source ../nu_scripts/custom-completions/auto-generate/completions/wine.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/whatis.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/who.nu
+# source ../nu_scripts/custom-completions/auto-generate/completions/wine.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/xargs.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/xdg-mime.nu
 source ../nu_scripts/custom-completions/auto-generate/completions/xinput.nu
@@ -129,7 +129,7 @@ source ../nu_scripts/custom-completions/btm/btm-completions.nu
 source ../nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ../nu_scripts/custom-completions/curl/curl-completions.nu
 source ../nu_scripts/custom-completions/docker/docker-completions.nu
-source ../nu_scripts/custom-completions/flutter/flutter-completions.nu
+# source ../nu_scripts/custom-completions/flutter/flutter-completions.nu
 source ../nu_scripts/custom-completions/gh/gh-completions.nu
 source ../nu_scripts/custom-completions/git/git-completions.nu
 source ../nu_scripts/custom-completions/glow/glow-completions.nu
@@ -138,21 +138,20 @@ source ../nu_scripts/custom-completions/just/just-completions.nu
 source ../nu_scripts/custom-completions/man/man-completions.nu
 source ../nu_scripts/custom-completions/mix/mix-completions.nu
 source ../nu_scripts/custom-completions/mvn/mvn-completions.nu
-source ../nu_scripts/custom-completions/nano/nano-completions.nu
+# source ../nu_scripts/custom-completions/nano/nano-completions.nu
 source ../nu_scripts/custom-completions/nix/nix-completions.nu
 source ../nu_scripts/custom-completions/podman/podman-completions.nu
-source ../nu_scripts/custom-completions/poetry/poetry-completions.nu
+# source ../nu_scripts/custom-completions/poetry/poetry-completions.nu
 source ../nu_scripts/custom-completions/pre-commit/pre-commit-completions.nu
 source ../nu_scripts/custom-completions/pytest/pytest-completions.nu
-source ../nu_scripts/custom-completions/pytest/pytest-completions.nu
 source ../nu_scripts/custom-completions/rg/rg-completions.nu
-source ../nu_scripts/custom-completions/rustup/rustup-completions.nu
-source ../nu_scripts/custom-completions/scoop/scoop-completions.nu
+# source ../nu_scripts/custom-completions/rustup/rustup-completions.nu
+# source ../nu_scripts/custom-completions/scoop/scoop-completions.nu
 source ../nu_scripts/custom-completions/ssh/ssh-completions.nu
 source ../nu_scripts/custom-completions/tar/tar-completions.nu
 source ../nu_scripts/custom-completions/tealdeer/tldr-completions.nu
 source ../nu_scripts/custom-completions/uv/uv-completions.nu
-source ../nu_scripts/custom-completions/vscode/vscode-completions.nu
-source ../nu_scripts/custom-completions/winget/winget-completions.nu
+# source ../nu_scripts/custom-completions/vscode/vscode-completions.nu
+# source ../nu_scripts/custom-completions/winget/winget-completions.nu
 source ../nu_scripts/custom-completions/zellij/zellij-completions.nu
 source ../nu_scripts/custom-completions/zoxide/zoxide-completions.nu
