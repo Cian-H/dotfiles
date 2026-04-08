@@ -7,6 +7,12 @@
         }
     ],
     "states": {
+        "keybind-cheatsheet": {
+            "enabled": true
+        },
+        "privacy-indicator": {
+            "enabled": true
+        }
     },
     "version": 2
 }
