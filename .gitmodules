@@ -31,9 +31,6 @@
 [submodule "dot_config/yazi/plugins/starship.yazi"]
 	path = dot_config/yazi/plugins/starship.yazi
 	url = https://github.com/Rolv-Apneseth/starship.yazi
-[submodule "dot_config/yazi/plugins/glow.yazi"]
-	path = dot_config/yazi/plugins/glow.yazi
-	url = https://github.com/Reledia/glow.yazi
 [submodule "dot_config/yazi/plugins/wl-clipboard.yazi"]
 	path = dot_config/yazi/plugins/wl-clipboard.yazi
 	url = https://github.com/grappas/wl-clipboard.yazi
