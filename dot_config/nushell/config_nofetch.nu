@@ -8,6 +8,5 @@ $env.config = (
 # Initialise the plugins
 source nu_scripts.nu
 # Finally, initialise the completion plugins
-source completions/atuin.nu
-source completions/rbw.nu
-source completions/nu_scripts.nu
+source integrations/atuin.nu
+source integrations/rbw.nu

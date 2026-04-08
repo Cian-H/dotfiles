@@ -8,8 +8,7 @@ $env.config = (
 # Initialise the plugins
 source nu_scripts.nu
 # initialise the completion plugins
-source completions/atuin.nu
-source completions/rbw.nu
-source completions/nu_scripts.nu
+source integrations/atuin.nu
+source integrations/rbw.nu
 # Finally, we run a system info fetch
 sysfetch
