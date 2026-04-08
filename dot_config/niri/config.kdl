@@ -1,0 +1,114 @@
+layout {
+    gaps 12
+    focus-ring {
+        off
+    }
+    border {
+        width 2
+        active-color "#7aa2f7"
+        inactive-color "#595959aa"
+    }
+    shadow {
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+}
+
+spawn-sh-at-startup "qs -c noctalia-shell"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+binds {
+    // ---------------------------------------------------------
+    // Applications & Launchers
+    // ---------------------------------------------------------
+    Mod+Space { spawn "walker"; }
+    Mod+Q     { spawn "ghostty" "+new-window"; }
+    Mod+W     { spawn "vivaldi"; }
+    Mod+E     { spawn "obsidian"; }
+    Mod+R     { spawn "zotero"; }
+    Mod+T     { spawn "zeal"; }
+    Mod+Y     { spawn "spotify"; }
+    Mod+U     { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+    Mod+I     { spawn "onlyoffice-desktopeditors"; }
+    Mod+O     { spawn "thunar"; }
+    Mod+P     { spawn "missioncenter"; }
+    Mod+S     { spawn "kitty"; }
+    Mod+D     { spawn "walker-obsidian-search"; }
+
+    // ---------------------------------------------------------
+    // DE Functions
+    // ---------------------------------------------------------
+    Mod+Tab   { spawn-sh "hyprshot --mode region -o ~/Pictures/Screenshot/"; } // Or replace with native `screenshot;`
+    Mod+Escape { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+Shift+T { spawn "hyprpicker" "-a"; }
+    Mod+Period { spawn "walker" "-m" "symbols"; }
+    Mod+C     { close-window; }
+    Mod+V     { toggle-window-floating; }
+    Mod+M     { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+    Mod+A     { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:keybind-cheatsheet" "toggle"; }
+
+    // ---------------------------------------------------------
+    // Media Controls
+    // ---------------------------------------------------------
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMute        allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+
+    // ---------------------------------------------------------
+    // Navigation (The Niri Paradigm)
+    // Left/Right navigates columns, Up/Down navigates windows inside a column
+    // ---------------------------------------------------------
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
+
+    // ---------------------------------------------------------
+    // Window Movement
+    // ---------------------------------------------------------
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+H     { move-column-left; }
+    Mod+Shift+L     { move-column-right; }
+
+    Mod+Shift+Down  { move-window-to-workspace-down; }
+    Mod+Shift+Up    { move-window-to-workspace-up; }
+    Mod+Shift+J     { move-window-to-workspace-down; }
+    Mod+Shift+K     { move-window-to-workspace-up; }
+
+    // ---------------------------------------------------------
+    // Workspaces
+    // ---------------------------------------------------------
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    Mod+Shift+1 { move-window-to-workspace 1; }
+    Mod+Shift+2 { move-window-to-workspace 2; }
+    Mod+Shift+3 { move-window-to-workspace 3; }
+    Mod+Shift+4 { move-window-to-workspace 4; }
+    Mod+Shift+5 { move-window-to-workspace 5; }
+    Mod+Shift+6 { move-window-to-workspace 6; }
+    Mod+Shift+7 { move-window-to-workspace 7; }
+    Mod+Shift+8 { move-window-to-workspace 8; }
+    Mod+Shift+9 { move-window-to-workspace 9; }
+
+    Mod+Shift+E { quit; }
+}
