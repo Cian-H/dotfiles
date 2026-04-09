@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
-printf -v safe_args '%q ' "$@"
+if [[ "$1" == "start" ]]; then
+    shift
+fi
 
 if command -v qs >/dev/null 2>&1; then
-    exec qs -c "noctalia-shell $safe_args"
+    if [[ $# -gt 0 ]]; then
+        printf -v safe_args '%q ' "$@"
+        safe_args="${safe_args% }"
+        exec qs -c "noctalia-shell $safe_args"
+    else
+        exec qs -c "noctalia-shell"
+    fi
 else
     exec noctalia-shell "$@"
 fi
