@@ -25,90 +25,75 @@ hotkey-overlay {
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 binds {
-    // ---------------------------------------------------------
-    // Applications & Launchers
-    // ---------------------------------------------------------
-    Mod+Space { spawn "walker"; }
-    Mod+Q     { spawn "ghostty" "+new-window"; }
-    Mod+W     { spawn "vivaldi"; }
-    Mod+E     { spawn "obsidian"; }
-    Mod+R     { spawn "zotero"; }
-    Mod+T     { spawn "zeal"; }
-    Mod+Y     { spawn "spotify"; }
-    Mod+U     { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
-    Mod+I     { spawn "onlyoffice-desktopeditors"; }
-    Mod+O     { spawn "thunar"; }
-    Mod+P     { spawn "missioncenter"; }
-    Mod+S     { spawn "kitty"; }
-    Mod+D     { spawn "walker-obsidian-search"; }
+    // #"1. Application Launchers"
+    Mod+Space hotkey-overlay-title="Activate the launcher" { spawn "walker"; }
+    Mod+Q     hotkey-overlay-title="Launch the terminal" { spawn "ghostty" "+new-window"; }
+    Mod+W     hotkey-overlay-title="Launch the browser" { spawn "vivaldi"; }
+    Mod+E     hotkey-overlay-title="Launch the note manager" { spawn "obsidian"; }
+    Mod+R     hotkey-overlay-title="Launch the literature manager" { spawn "zotero"; }
+    Mod+T     hotkey-overlay-title="Launch the local documentation browser" { spawn "zeal"; }
+    Mod+Y     hotkey-overlay-title="Launch the music player" { spawn "spotify"; }
+    Mod+U     hotkey-overlay-title="Launch the control center" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+    Mod+I     hotkey-overlay-title="Launch the office suite" { spawn "onlyoffice-desktopeditors"; }
+    Mod+O     hotkey-overlay-title="Launch the file manager" { spawn "thunar"; }
+    Mod+P     hotkey-overlay-title="Launch the performance monitor" { spawn "missioncenter"; }
+    Mod+S     hotkey-overlay-title="Launch the backup terminal" { spawn "kitty"; }
+    Mod+D     hotkey-overlay-title="Search the note manager" { spawn "walker-obsidian-search"; }
 
-    // ---------------------------------------------------------
-    // DE Functions
-    // ---------------------------------------------------------
-    Mod+Tab   { spawn-sh "hyprshot --mode region -o ~/Pictures/Screenshot/"; } // Or replace with native `screenshot;`
-    Mod+Escape { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-    Mod+Shift+T { spawn "hyprpicker" "-a"; }
-    Mod+Period { spawn "walker" "-m" "symbols"; }
-    Mod+C     { close-window; }
-    Mod+V     { toggle-window-floating; }
-    Mod+M     { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
-    Mod+A     { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:keybind-cheatsheet" "toggle"; }
+    // #"2. Function Hotkeys"
+    Mod+Tab    hotkey-overlay-title="Take a screenshot" { spawn-sh "hyprshot --mode region -o ~/Pictures/Screenshot/"; } // Or replace with native `screenshot;`
+    Mod+Escape hotkey-overlay-title="Lock the screen" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+Shift+T hotkey-overlay-title="Activate Color Picker" { spawn "hyprpicker" "-a"; }
+    Mod+Period hotkey-overlay-title="Launch emoji picker" { spawn "walker" "-m" "symbols"; }
+    Mod+C      hotkey-overlay-title="Kill the active window" { close-window; }
+    Mod+V      hotkey-overlay-title="Toggle floating window" { toggle-window-floating; }
+    Mod+M      hotkey-overlay-title="Launch the power menu" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+    Mod+A      hotkey-overlay-title="Display this cheatsheet" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:keybind-cheatsheet" "toggle"; }
 
-    // ---------------------------------------------------------
-    // Media Controls
-    // ---------------------------------------------------------
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute        allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86AudioRaiseVolume allow-when-locked=true hotkey-overlay-title="Increase volume" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioLowerVolume allow-when-locked=true hotkey-overlay-title="Decrease volume" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMute        allow-when-locked=true hotkey-overlay-title="Mute volume" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
 
-    // ---------------------------------------------------------
-    // Navigation (The Niri Paradigm)
-    // Left/Right navigates columns, Up/Down navigates windows inside a column
-    // ---------------------------------------------------------
-    Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
-    Mod+Right { focus-column-right; }
-    Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
-    Mod+L     { focus-column-right; }
+    // #"3. Navigation"
+    Mod+Left  hotkey-overlay-title="Navigate left" { focus-column-left; }
+    Mod+Down  hotkey-overlay-title="Navigate down" { focus-window-down; }
+    Mod+Up    hotkey-overlay-title="Navigate up" { focus-window-up; }
+    Mod+Right hotkey-overlay-title="Navigate right" { focus-column-right; }
+    Mod+H     hotkey-overlay-title="Navigate left" { focus-column-left; }
+    Mod+J     hotkey-overlay-title="Navigate down" { focus-window-down; }
+    Mod+K     hotkey-overlay-title="Navigate up" { focus-window-up; }
+    Mod+L     hotkey-overlay-title="Navigate right" { focus-column-right; }
 
-    // ---------------------------------------------------------
-    // Window Movement
-    // ---------------------------------------------------------
-    Mod+Shift+Left  { move-column-left; }
-    Mod+Shift+Right { move-column-right; }
-    Mod+Shift+H     { move-column-left; }
-    Mod+Shift+L     { move-column-right; }
+    Mod+1 hotkey-overlay-title="Move to workspace 1" { focus-workspace 1; }
+    Mod+2 hotkey-overlay-title="Move to workspace 2" { focus-workspace 2; }
+    Mod+3 hotkey-overlay-title="Move to workspace 3" { focus-workspace 3; }
+    Mod+4 hotkey-overlay-title="Move to workspace 4" { focus-workspace 4; }
+    Mod+5 hotkey-overlay-title="Move to workspace 5" { focus-workspace 5; }
+    Mod+6 hotkey-overlay-title="Move to workspace 6" { focus-workspace 6; }
+    Mod+7 hotkey-overlay-title="Move to workspace 7" { focus-workspace 7; }
+    Mod+8 hotkey-overlay-title="Move to workspace 8" { focus-workspace 8; }
+    Mod+9 hotkey-overlay-title="Move to workspace 9" { focus-workspace 9; }
 
-    Mod+Shift+Down  { move-window-to-workspace-down; }
-    Mod+Shift+Up    { move-window-to-workspace-up; }
-    Mod+Shift+J     { move-window-to-workspace-down; }
-    Mod+Shift+K     { move-window-to-workspace-up; }
+    // #"4. Window Management"
+    Mod+Shift+Left  hotkey-overlay-title="Move window left" { move-column-left; }
+    Mod+Shift+Right hotkey-overlay-title="Move window right" { move-column-right; }
+    Mod+Shift+H     hotkey-overlay-title="Move window left" { move-column-left; }
+    Mod+Shift+L     hotkey-overlay-title="Move window right" { move-column-right; }
 
-    // ---------------------------------------------------------
-    // Workspaces
-    // ---------------------------------------------------------
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
-    Mod+7 { focus-workspace 7; }
-    Mod+8 { focus-workspace 8; }
-    Mod+9 { focus-workspace 9; }
+    Mod+Shift+Down  hotkey-overlay-title="Move window to down workspace" { move-window-to-workspace-down; }
+    Mod+Shift+Up    hotkey-overlay-title="Move window to up workspace" { move-window-to-workspace-up; }
+    Mod+Shift+J     hotkey-overlay-title="Move window to down workspace" { move-window-to-workspace-down; }
+    Mod+Shift+K     hotkey-overlay-title="Move window to up workspace" { move-window-to-workspace-up; }
 
-    Mod+Shift+1 { move-window-to-workspace 1; }
-    Mod+Shift+2 { move-window-to-workspace 2; }
-    Mod+Shift+3 { move-window-to-workspace 3; }
-    Mod+Shift+4 { move-window-to-workspace 4; }
-    Mod+Shift+5 { move-window-to-workspace 5; }
-    Mod+Shift+6 { move-window-to-workspace 6; }
-    Mod+Shift+7 { move-window-to-workspace 7; }
-    Mod+Shift+8 { move-window-to-workspace 8; }
-    Mod+Shift+9 { move-window-to-workspace 9; }
+    Mod+Shift+1 hotkey-overlay-title="Move window to workspace 1" { move-window-to-workspace 1; }
+    Mod+Shift+2 hotkey-overlay-title="Move window to workspace 2" { move-window-to-workspace 2; }
+    Mod+Shift+3 hotkey-overlay-title="Move window to workspace 3" { move-window-to-workspace 3; }
+    Mod+Shift+4 hotkey-overlay-title="Move window to workspace 4" { move-window-to-workspace 4; }
+    Mod+Shift+5 hotkey-overlay-title="Move window to workspace 5" { move-window-to-workspace 5; }
+    Mod+Shift+6 hotkey-overlay-title="Move window to workspace 6" { move-window-to-workspace 6; }
+    Mod+Shift+7 hotkey-overlay-title="Move window to workspace 7" { move-window-to-workspace 7; }
+    Mod+Shift+8 hotkey-overlay-title="Move window to workspace 8" { move-window-to-workspace 8; }
+    Mod+Shift+9 hotkey-overlay-title="Move window to workspace 9" { move-window-to-workspace 9; }
 
-    Mod+Shift+E { quit; }
+    Mod+Shift+E hotkey-overlay-title="Quit Niri" { quit; }
 }
