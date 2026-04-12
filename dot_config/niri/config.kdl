@@ -1,8 +1,14 @@
+spawn-sh-at-startup "qs -c noctalia-shell"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
 layout {
     gaps 12
-    focus-ring {
-        off
-    }
+    always-center-single-column
     border {
         width 2
         active-color "#7aa2f7"
@@ -16,13 +22,27 @@ layout {
     }
 }
 
-spawn-sh-at-startup "qs -c noctalia-shell"
-
-hotkey-overlay {
-    skip-at-startup
+window-rule {
+    geometry-corner-radius 4
+    clip-to-geometry true
+    focus-ring {
+        off
+    }
+    border {
+        on
+        width 4
+    }
 }
 
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+input {
+    keyboard {
+        numlock
+    }
+    touchpad {
+        tap
+        natural-scroll
+    }
+}
 
 binds {
     // #"1. Application Launchers"
