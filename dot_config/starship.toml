@@ -21,7 +21,7 @@ powershell_indicator = "[](bold blue)"
 min_time = 0
 show_milliseconds = true
 show_notifications = true
-min_time_to_notify = 30_000
+min_time_to_notify = 300_000
 format = " [󰔛 $duration]($style)"
 
 [hostname]
