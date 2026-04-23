@@ -115,5 +115,10 @@ binds {
     Mod+Shift+8 hotkey-overlay-title="Move window to workspace 8" { move-window-to-workspace 8; }
     Mod+Shift+9 hotkey-overlay-title="Move window to workspace 9" { move-window-to-workspace 9; }
 
+    Mod+Minus hotkey-overlay-title="Shrink column" { set-column-width "-10%"; }
+    Mod+Equal hotkey-overlay-title="Grow column" { set-column-width "+10%"; }
+    Mod+Shift+F hotkey-overlay-title="Maximize column" { maximize-column; }
+    Mod+Comma   hotkey-overlay-title="Reset width"    { set-column-width "50%"; }
+
     Mod+Shift+E hotkey-overlay-title="Quit Niri" { quit; }
 }
