@@ -43,3 +43,6 @@
 [submodule "dot_config/noctalia/plugins-repo"]
 	path = dot_config/noctalia/plugins-repo
 	url = https://github.com/noctalia-dev/noctalia-plugins.git
+[submodule "dot_config/noctalia/plugins/workday-progress"]
+	path = dot_config/noctalia/plugins/workday-progress
+	url = https://github.com/Cian-H/workday-progress

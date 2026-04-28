@@ -18,7 +18,12 @@
         "screen-toolkit": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "workday-progress": {
+            "enabled": true,
+            "sourceUrl": "local"
         }
+
     },
     "version": 2
 }

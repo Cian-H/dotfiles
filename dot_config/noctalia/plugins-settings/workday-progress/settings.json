@@ -1,0 +1,16 @@
+{
+  "startHour": 9,
+  "endHour": 17,
+  "startMinute": 0,
+  "endMinute": 0,
+  "barWidth": 64,
+  "borderThickness": 2,
+  "marginThickness": 4,
+  "innerMarginThickness": 4,
+  "outerMarginThickness": 2,
+  "marginTop": 38,
+  "marginBottom": 6,
+  "marginSide": 4,
+  "screenEdge": "right",
+  "screenIndex": 2
+}
