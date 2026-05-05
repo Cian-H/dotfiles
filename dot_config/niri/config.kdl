@@ -52,7 +52,7 @@ binds {
     Mod+E     hotkey-overlay-title="Launch the note manager" { spawn "obsidian"; }
     Mod+R     hotkey-overlay-title="Launch the literature manager" { spawn "zotero"; }
     Mod+T     hotkey-overlay-title="Launch the local documentation browser" { spawn "zeal"; }
-    Mod+Y     hotkey-overlay-title="Launch the music player" { spawn "spotify"; }
+    Mod+Y     hotkey-overlay-title="Launch the music player" { spawn "sone"; }
     Mod+U     hotkey-overlay-title="Launch the control center" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
     Mod+I     hotkey-overlay-title="Launch the office suite" { spawn "onlyoffice-desktopeditors"; }
     Mod+O     hotkey-overlay-title="Launch the file manager" { spawn "thunar"; }
