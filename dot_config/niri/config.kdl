@@ -1,3 +1,6 @@
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "XDG_SESSION_TYPE"
+spawn-at-startup "systemctl" "--user" "start" "graphical-session.target"
+
 spawn-sh-at-startup "qs -c noctalia-shell"
 
 hotkey-overlay {
