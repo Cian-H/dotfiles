@@ -13,9 +13,6 @@
 [submodule "dot_config/micro/plug/lsp"]
 	path = dot_config/micro/plug/lsp
 	url = https://github.com/AndCake/micro-plugin-lsp.git
-[submodule "dot_config/yazi/plugins/hexyl.yazi"]
-	path = dot_config/yazi/plugins/hexyl.yazi
-	url = https://github.com/Reledia/hexyl.yazi
 [submodule "dot_config/yazi/flavors/tokyo-night.yazi"]
 	path = dot_config/yazi/flavors/tokyo-night.yazi
 	url = https://github.com/BennyOe/tokyo-night.yazi.git
