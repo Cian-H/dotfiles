@@ -46,3 +46,9 @@
 [submodule "dot_config/noctalia/plugins-custom/workday-progress"]
 	path = dot_config/noctalia/plugins-custom/workday-progress
 	url = https://github.com/Cian-H/workday-progress
+[submodule "dot_config/yazi/plugins/clipboard.yazi"]
+	path = dot_config/yazi/plugins/clipboard.yazi
+	url = https://github.com/XYenon/clipboard.yazi.git
+[submodule "dot_config/yazi/plugins/yazi-rs-plugins"]
+	path = dot_config/yazi/plugins/yazi-rs-plugins
+	url = https://github.com/yazi-rs/plugins.git
