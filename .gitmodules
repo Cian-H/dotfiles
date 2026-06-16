@@ -36,7 +36,7 @@
 	url = https://github.com/SUSTech-data/max-preview.yazi
 [submodule "dot_config/noctalia/plugins-repo"]
 	path = dot_config/noctalia/plugins-repo
-	url = https://github.com/noctalia-dev/noctalia-plugins.git
+	url = https://github.com/noctalia-dev/legacy-v4-plugins.git
 [submodule "dot_config/noctalia/plugins-custom/workday-progress"]
 	path = dot_config/noctalia/plugins-custom/workday-progress
 	url = https://github.com/Cian-H/workday-progress
