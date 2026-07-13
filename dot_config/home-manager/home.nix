@@ -5,7 +5,9 @@
   ...
 }: {
   news.display = "notify";
-  home.stateVersion = "23.11";
-  home.username = lib.mkForce (builtins.getEnv "USER");
-  home.homeDirectory = lib.mkForce (builtins.getEnv "HOME");
+  home = {
+    stateVersion = "23.11";
+    username = lib.mkForce (builtins.getEnv "USER");
+    homeDirectory = lib.mkForce (builtins.getEnv "HOME");
+  };
 }
