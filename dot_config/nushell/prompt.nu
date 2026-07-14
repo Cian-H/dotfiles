@@ -32,7 +32,7 @@ def parse_ms_to_human_readable [ms: string] {
         } else if $time_in_ms < 1000 * 60 * 60 * 24 {
             $"(($time_in_ms / (1000 * 60 * 60)) | into string --decimals 2)h"
         } else {
-            $"(($time_in_ms // (1000 * 60 * 60 * 24)) | into string)d/(parse_ms_to_human_readable ($time_in_ms mod (1000 * 60 * 60 * 24)))"
+            $"(($time_in_ms // (1000 * 60 * 60 * 24)) | into string)d/(parse_ms_to_human_readable ($time_in_ms mod (1000 * 60 * 60 * 24) | into string))"
         } | into string
     }
 }
