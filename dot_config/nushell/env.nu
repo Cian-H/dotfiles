@@ -49,6 +49,9 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join "plugins"), # add <nushell-config-dir>/plugins
 ]
 
+# Next, we should attach our carapace config variables
+$env.CARAPACE_BRIDGES = "zsh,fish,bash,inshellisense"
+
 # Personal env vars
 $env.EDITOR = "nvim"
 $env.GIT_EDITOR = "nvim"
