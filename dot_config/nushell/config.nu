@@ -7,7 +7,9 @@ $env.config = (
 )
 # Initialise the plugins
 source nu_scripts.nu
-# initialise the completion plugins
+# initialise the external plugins
+source integrations/starship.nu
+source integrations/zoxide.nu
 source integrations/atuin.nu
 # Finally, we run a system info fetch
 sysfetch
