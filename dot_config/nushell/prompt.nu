@@ -6,18 +6,6 @@ export def was_successful [] {
     (get_env "LAST_EXIT_CODE") == 0
 }
 
-export def create_left_prompt [] {
-    ^starship prompt --cmd-duration (get_env "CMD_DURATION_MS") $'--status=($env.LAST_EXIT_CODE)' --terminal-width (term size).columns
-}
-
-export def create_right_prompt [] {
-    ^starship prompt --right --cmd-duration (get_env "CMD_DURATION_MS") $'--status=($env.LAST_EXIT_CODE)' --terminal-width (term size).columns
-}
-
-export def create_continuation_prompt [] {
-    ^starship prompt --continuation --cmd-duration (get_env "CMD_DURATION_MS") $'--status=($env.LAST_EXIT_CODE)' --terminal-width (term size).columns
-}
-
 def parse_ms_to_human_readable [ms: string] {
     if $ms == "" {
         $ms
@@ -39,9 +27,9 @@ def parse_ms_to_human_readable [ms: string] {
 
 export def create_transient_prompt_left [] {
     if (was_successful) {
-        $"(ansi green_bold)󱔳(ansi reset)"
+        $"(ansi green_bold)(ansi reset)"
     } else {
-        $"(ansi red_bold)󱔷(ansi reset)"
+        $"(ansi red_bold)(ansi reset)"
     }
 }
 export def create_transient_prompt_indicator [] {

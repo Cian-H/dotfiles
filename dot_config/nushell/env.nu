@@ -2,25 +2,13 @@
 #
 # version = "0.89.0"
 
+# Attache starship to the shell
+source integrations/starship.nu
 use prompt.nu *
-
-# Use nushell functions to define your right and left prompt
-$env.STARSHIP_SHELL = "nu"
-$env.PROMPT_COMMAND = {|| create_left_prompt }
-$env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
-
-# Variables that represent the state of the prompt
-$env.PROMPT_INDICATOR = {|| "" }
 $env.PROMPT_INDICATOR_VI_INSERT = {|| ": " }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
-$env.PROMPT_MULTILINE_INDICATOR = {|| create_continuation_prompt }
-
 $env.TRANSIENT_PROMPT_COMMAND = {|| create_transient_prompt_left }
 $env.TRANSIENT_PROMPT_INDICATOR = {|| create_transient_prompt_indicator }
-# $env.TRANSIENT_PROMPT_INDICATOR_VI_INSERT = {|| "" }
-# $env.TRANSIENT_PROMPT_INDICATOR_VI_NORMAL = {|| "" }
-# $env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = {|| "" }
-# $env.TRANSIENT_PROMPT_COMMAND_RIGHT = {|| "" }
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
