@@ -25,8 +25,8 @@ export def 'sysfetch' [] {
 
 export def 'register-plugins' [] {
     for plugin_dir in $env.NU_PLUGIN_DIRS {
-        for plugin_path in (ls $"($env.NU_PLUGIN_DIRS.0)/nu_plugin_*").name {
-            nu -c $"register ($plugin_path)"
+        for plugin_path in (ls $"($plugin_dir)/nu_plugin_*").name {
+            plugin add $plugin_path
         }
     }
 }
@@ -41,7 +41,8 @@ export def 'build-plugins' [] {
 }
 
 export def 'install-default-plugins' [] {
-    [ nu_plugin_inc
+    [
+      nu_plugin_inc
       nu_plugin_polars
       # nu_plugin_gstat
       nu_plugin_formats
