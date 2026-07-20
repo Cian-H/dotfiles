@@ -1,12 +1,14 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+format = "$all$character$shell"
+
 # Inserts a blank line between shell prompts
 add_newline = true
-continuation_prompt = "[󰾗━ ](yellow)"
+continuation_prompt = "[ ](yellow)"
 
 [character]
-success_symbol = "[󱔳](bold green) "
-error_symbol = "[󱔷](bold red) "
+success_symbol = "[](bold green) "
+error_symbol = "[](bold red) "
 
 [shell]
 disabled = false
