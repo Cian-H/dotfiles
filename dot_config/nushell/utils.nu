@@ -58,3 +58,7 @@ export def 'start-lab-session' [
     pueue kill $task_id
     pueue rm $task_id
 }
+
+export def in-devenv? [] {
+    "DEVENV_RUNTIME" in $env
+}

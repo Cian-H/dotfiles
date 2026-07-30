@@ -28,7 +28,7 @@ export def main [] {
             env_change: {
                 PWD: [
                     {|before, after| # This hook runs onefetch when the current directory is a git repository
-                        if ".git\n" in ($after | ls -a | str join) {
+                        if (not (in-devenv?)) and (".git\n" in ($after | ls -a | str join)) {
                             print (^onefetch --nerd-fonts)
                         }
                     },

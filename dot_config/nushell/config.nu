@@ -13,6 +13,6 @@ source integrations/zoxide.nu
 source integrations/atuin.nu
 source integrations/rip.nu
 # Finally, we run a system info fetch
-if not ("DEVENV_RUNTIME" in $env) {
+if not (in-devenv?) {
     sysfetch
 }
