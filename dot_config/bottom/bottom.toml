@@ -20,7 +20,7 @@
 # Whether to set CPU% on a process to be based on the total CPU or per-core CPU% (not divided by the number of cpus).
 #unnormalized_cpu = false
 # Whether to group processes with the same name together by default.
-group_processes = true
+#group_processes = true
 # Whether to make process searching case sensitive by default.
 #case_sensitive = false
 # Whether to make process searching look for matching the entire word by default.
@@ -76,13 +76,18 @@ group_processes = true
 # Shows GPU(s) memory
 enable_gpu_memory = true
 # Shows cache and buffer memory
-enable_cache_memory = true
+#enable_cache_memory = true
+
+[memory]
+cache_memory = true
+
 # How much data is stored at once in terms of time.
 #retention = "10m"
 
 # These are flags around the process widget.
 
-#[processes]
+[processes]
+default_grouped = true
 #columns = ["PID", "Name", "CPU%", "Mem%", "R/s", "W/s", "T.Read", "T.Write", "User", "State"]
 
 # These are all the components that support custom theming.  Note that colour support
