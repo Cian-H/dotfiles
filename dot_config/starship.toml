@@ -209,3 +209,9 @@ symbol = " "
 
 [gradle]
 symbol = " "
+
+[deno]
+symbol = " "
+
+[bun]
+symbol = " "
