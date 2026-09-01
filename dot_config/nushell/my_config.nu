@@ -27,9 +27,14 @@ export def main [] {
         hooks: {
             env_change: {
                 PWD: [
-                    {|before, after| # This hook runs onefetch when the current directory is a git repository
-                        if (not (in-devenv?)) and (".git\n" in ($after | ls -a | str join)) {
-                            print (^onefetch --nerd-fonts)
+                    {|before, after| # This hook runs onefetch when entering a new git repository
+                        if (not (in-devenv?)) and ($after | path join ".git" | path exists) {
+                            let repo_root = (^git -C $after rev-parse --show-toplevel | str trim)
+                            let last_repo = ($env | default "" __last_onefetch_repo | get __last_onefetch_repo)
+                            if $repo_root != $last_repo {
+                                try { ^timeout 2.0 onefetch --nerd-fonts | print }
+                                $env.__last_onefetch_repo = $repo_root
+                            }
                         }
                     },
                     {||
