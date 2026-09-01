@@ -1,7 +1,10 @@
 export def main [] {
+    let carapace_completer = {|spans|
+        carapace $spans.0 nushell ...$spans | from json
+    }
+
     {
         show_banner: false # disable the welcome banner at startup
-        # For some reason wezterm adds a newline every keypress
         shell_integration: {
             osc2: true
             osc7: true
@@ -15,13 +18,22 @@ export def main [] {
         # use kitty protocol when running inside kitty or wezterm
         use_kitty_protocol: (
             (
+                ("TERM" in $env) and ("ghostty" in $env.TERM)
+            ) or (
                 ("TERM" in $env) and ("kitty" in $env.TERM)
             ) or (
-                not ("WEZTERM_EXECUTABLE" in $env)
+                "WEZTERM_EXECUTABLE" in $env
             )
         )
         history: {
             file_format: "sqlite"
+            isolation: true # isolate up-arrow history per session, shared search still works
+        }
+        completions: {
+            algorithm: "fuzzy" # match anywhere in completion candidates, not just prefix
+            external: {
+                completer: $carapace_completer
+            }
         }
         render_right_prompt_on_last_line: true
         hooks: {
@@ -32,17 +44,29 @@ export def main [] {
                             let repo_root = (^git -C $after rev-parse --show-toplevel | str trim)
                             let last_repo = ($env | default "" __last_onefetch_repo | get __last_onefetch_repo)
                             if $repo_root != $last_repo {
-                                try { ^timeout 2.0 onefetch --nerd-fonts | print }
+                                try { ^timeout 2.5 onefetch --nerd-fonts | print }
                                 $env.__last_onefetch_repo = $repo_root
                             }
                         }
                     },
                     {||
-                        if (exists direnv) {
-                            direnv export json | from json | default {} | load-env
+                        if $env.__has_direnv {
+                            try { direnv export json | from json | default {} | load-env }
                         }
                     }
                 ]
+            }
+            command_not_found: {|cmd_name|
+                try {
+                    let pkgs = (
+                        nix-locate --minimal --no-group --type x --type s
+                            --top-level --whole-name --at-root $"/bin/($cmd_name)"
+                        | str trim | lines
+                    )
+                    if ($pkgs | is-not-empty) {
+                        $"(ansi yellow)($cmd_name)(ansi reset) is available in: ($pkgs | str join ', ')"
+                    }
+                }
             }
         }
         cursor_shape: {

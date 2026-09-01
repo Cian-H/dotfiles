@@ -1,14 +1,13 @@
 # Imports of custom modules from init to help keep my config file clean
 use default_config.nu
 use init.nu *
-# Combine config records to create the final config
+# Combine config records, merging onto nushell's built-in defaults
 $env.config = (
-    (default_config) | merge (theme) | merge (my_config)
+    $env.config | merge (default_config) | merge (theme) | merge (my_config)
 )
 # Initialise the plugins
 source nu_scripts.nu
-# initialise the external plugins
-source integrations/starship.nu
+# initialise the external integrations
 source integrations/zoxide.nu
 source integrations/atuin.nu
 source integrations/rip.nu

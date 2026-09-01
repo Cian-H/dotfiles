@@ -1,7 +1,7 @@
 # aliases for modern unix rebindings
 export alias cat = bat
 # export alias ls = lsd
-export alias du = dust
+export alias ddu = dust
 export alias df = duf
 export alias grep = rg
 export alias cp = xcp

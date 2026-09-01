@@ -1,6 +1,4 @@
 # Nushell Environment Config File
-#
-# version = "0.89.0"
 
 # Attache starship to the shell
 source integrations/starship.nu
@@ -73,3 +71,6 @@ $env.PATH = (
         | path expand --no-symlink
     )
 )
+
+# Cache tool availability so hooks don't call `which` on every cd
+$env.__has_direnv = (not (which direnv | is-empty))
