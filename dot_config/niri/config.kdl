@@ -1,7 +1,7 @@
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "XDG_SESSION_TYPE"
 spawn-at-startup "systemctl" "--user" "start" "graphical-session.target"
 
-spawn-sh-at-startup "qs -c noctalia-shell"
+spawn-sh-at-startup "noctalia"
 
 hotkey-overlay {
     skip-at-startup
@@ -56,7 +56,7 @@ binds {
     Mod+R     hotkey-overlay-title="Launch the literature manager" { spawn "zotero"; }
     Mod+T     hotkey-overlay-title="Launch the local documentation browser" { spawn "zeal"; }
     Mod+Y     hotkey-overlay-title="Launch the music player" { spawn "sone"; }
-    Mod+U     hotkey-overlay-title="Launch the control center" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+    Mod+U     hotkey-overlay-title="Launch the control center" { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
     Mod+I     hotkey-overlay-title="Launch the office suite" { spawn "onlyoffice-desktopeditors"; }
     Mod+O     hotkey-overlay-title="Launch the file manager" { spawn "thunar"; }
     Mod+P     hotkey-overlay-title="Launch the performance monitor" { spawn "missioncenter"; }
@@ -65,17 +65,17 @@ binds {
 
     // #"2. Function Hotkeys"
     Mod+Tab    hotkey-overlay-title="Take a screenshot" { spawn-sh "hyprshot --mode region -o ~/Pictures/Screenshot/"; } // Or replace with native `screenshot;`
-    Mod+Escape hotkey-overlay-title="Lock the screen" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+Escape hotkey-overlay-title="Lock the screen" { spawn "noctalia" "msg" "session" "lock"; }
     Mod+Shift+T hotkey-overlay-title="Activate Color Picker" { spawn "hyprpicker" "-a"; }
     Mod+Period hotkey-overlay-title="Launch emoji picker" { spawn "walker" "-m" "symbols"; }
     Mod+C      hotkey-overlay-title="Kill the active window" { close-window; }
     Mod+V      hotkey-overlay-title="Toggle floating window" { toggle-window-floating; }
-    Mod+M      hotkey-overlay-title="Launch the power menu" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
-    Mod+A      hotkey-overlay-title="Display this cheatsheet" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:keybind-cheatsheet" "toggle"; }
+    Mod+M      hotkey-overlay-title="Launch the power menu" { spawn "noctalia" "msg" "panel-toggle" "session"; }
+    Mod+A      hotkey-overlay-title="Display this cheatsheet" { spawn "noctalia" "msg" "panel-toggle" "kenn/keybind-cheatsheet:cheatsheet"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true hotkey-overlay-title="Increase volume" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume allow-when-locked=true hotkey-overlay-title="Decrease volume" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute        allow-when-locked=true hotkey-overlay-title="Mute volume" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86AudioRaiseVolume allow-when-locked=true hotkey-overlay-title="Increase volume" { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume allow-when-locked=true hotkey-overlay-title="Decrease volume" { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute        allow-when-locked=true hotkey-overlay-title="Mute volume" { spawn "noctalia" "msg" "volume-mute"; }
 
     // #"3. Navigation"
     Mod+Left  hotkey-overlay-title="Navigate left" { focus-column-left; }

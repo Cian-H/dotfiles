@@ -1,0 +1,237 @@
+[theme]
+mode = "dark"
+source = "custom"
+custom_palette = "Tokyo-Night"
+
+[bar.default]
+position = "top"
+thickness = 34
+background_opacity = 0.93
+radius = 12
+padding = 14
+widget_spacing = 6
+margin_ends = 4
+margin_edge = 4
+reserve_space = true
+capsule = true
+capsule_fill = "surface_variant"
+capsule_thickness = 0.76
+capsule_opacity = 1.0
+
+[bar.default.lanes]
+start = ["launcher", "clock", "sysmon", "active_window", "media"]
+center = ["workspaces"]
+end = [
+  "privacy",
+  "screenshot",
+  "tray",
+  "cian-h/workday-progress:progress",
+  "notifications",
+  "battery",
+  "volume",
+  "brightness",
+  "keyboard_layout",
+  "control-center",
+]
+
+[bar.default.widgets.launcher]
+icon = "rocket"
+colorize = true
+icon_color = "tertiary"
+
+[bar.default.widgets.clock]
+format_horizontal = "HH:mm ddd, MMM dd"
+format_vertical = "HH mm - dd MM"
+tooltip_format = "HH:mm ddd, MMM dd"
+
+[bar.default.widgets.sysmon]
+compact = true
+show_cpu_usage = true
+show_cpu_temp = true
+show_memory_usage = true
+disk_path = "/"
+
+[bar.default.widgets.active_window]
+show_icon = true
+show_text = false
+max_width = 145
+scrolling_mode = "hover"
+
+[bar.default.widgets.media]
+show_album_art = true
+show_artist_first = true
+show_progress_ring = true
+show_visualizer = true
+visualizer_type = "linear"
+max_width = 145
+scrolling_mode = "hover"
+
+[bar.default.widgets.workspaces]
+character_count = 2
+colorize_icons = true
+empty_color = "secondary"
+occupied_color = "secondary"
+focused_color = "primary"
+font_weight = "bold"
+label_mode = "index"
+pill_size = 0.6
+show_applications = true
+show_applications_hover = true
+show_badge = true
+show_labels_only_when_occupied = true
+enable_scroll_wheel = true
+
+[bar.default.widgets.privacy]
+active_color = "primary"
+enable_toast = true
+
+[bar.default.widgets.screenshot]
+
+[bar.default.widgets.tray]
+drawer_enabled = true
+hide_passive = false
+
+[bar.default.widgets.notifications]
+show_unread_badge = true
+unread_badge_color = "primary"
+
+[bar.default.widgets.battery]
+display_mode = "graphic-clean"
+hide_if_not_detected = true
+
+[bar.default.widgets.volume]
+display_mode = "onhover"
+middle_click_command = "pwvucontrol || pavucontrol"
+
+[bar.default.widgets.brightness]
+display_mode = "onhover"
+
+[bar.default.widgets.keyboard_layout]
+display_mode = "onhover"
+show_icon = true
+
+[bar.default.widgets.control_center]
+icon = "noctalia"
+use_distro_logo = true
+colorize_system_icon = "primary"
+
+[dock]
+enabled = true
+position = "bottom"
+auto_hide = true
+smart_auto_hide = false
+magnification = true
+magnification_scale = 1.30
+icon_size = 40
+main_axis_padding = 5
+cross_axis_padding = 5
+item_spacing = 4
+background_opacity = 0.90
+radius = 12
+border_width = 1.0
+shadow = true
+show_running = true
+pinned = ["firefox", "kitty"]
+
+[control_center]
+sidebar = "compact"
+width = 700
+position = "close_to_bar_button"
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "audio"
+
+[[control_center.shortcuts]]
+type = "dark_mode"
+
+[audio]
+preferred_player = "sone"
+volume_step = 5
+enable_overdrive = true
+volume_feedback = true
+
+[brightness]
+brightness_step = 5
+enable_ddc_support = true
+enforce_minimum = true
+
+[wallpaper]
+enabled = true
+directory = "/home/cianh/Pictures/Wallpapers"
+fill_mode = "crop"
+transition_duration = 1500
+edge_smoothness = 0.05
+random_interval_sec = 300
+sort_order = "name"
+wallpaper_change_mode = "random"
+
+[wallpaper.default]
+path = "/home/cianh/Pictures/Wallpapers/wallhaven-l88xey.png"
+
+[idle]
+enabled = true
+lock_timeout = 660
+screen_off_timeout = 600
+suspend_timeout = 1800
+fade_duration = 5
+
+[notifications]
+enabled = true
+location = "top_right"
+low_urgency_duration = 3
+normal_urgency_duration = 8
+critical_urgency_duration = 15
+clear_dismissed = true
+enable_battery_toast = true
+enable_keyboard_layout_toast = true
+overlay_layer = true
+
+[osd]
+enabled = true
+location = "top_right"
+auto_hide_ms = 2000
+overlay_layer = true
+
+[shell]
+avatar_image = "/home/cianh/Pictures/face.png"
+language = "en-GB"
+lock_on_suspend = true
+compact_lock_screen = true
+enable_shadows = true
+show_session_buttons_on_lock_screen = true
+telemetry_enabled = false
+
+[system_monitor]
+external_monitor = "missioncenter"
+
+[plugins]
+enabled = [
+  "noctalia/screen_recorder",
+  "kenn/keybind-cheatsheet",
+  "cian-h/workday-progress",
+]
+auto_update = "all"
+
+[[plugins.source]]
+name = "official"
+kind = "git"
+location = "https://github.com/noctalia-dev/official-plugins"
+enabled = true
+
+[[plugins.source]]
+name = "community"
+kind = "git"
+location = "https://github.com/noctalia-dev/community-plugins"
+enabled = true
+
+[[plugins.source]]
+name = "personal-projects"
+kind = "path"
+location = "~/Storage/Programming/Personal_Projects/workday-progress"
+enabled = true
