@@ -231,7 +231,7 @@ location = "https://github.com/noctalia-dev/community-plugins"
 enabled = true
 
 [[plugins.source]]
-name = "personal-projects"
-kind = "path"
-location = "~/Storage/Programming/Personal_Projects/workday-progress"
+name = "my-plugins"
+kind = "git"
+location = "https://github.com/Cian-H/noctalia-plugins"
 enabled = true
