@@ -68,7 +68,7 @@ binds {
     Mod+D     hotkey-overlay-title="Search the note manager" { spawn "walker-obsidian-search"; }
 
     // #"2. Function Hotkeys"
-    Mod+Tab    hotkey-overlay-title="Take a screenshot" { spawn-sh "hyprshot --mode region -o ~/Pictures/Screenshot/"; } // Or replace with native `screenshot;`
+    Mod+Tab    hotkey-overlay-title="Take a screenshot" { spawn-sh "hyprshot --mode region -o ~/Pictures/Screenshots/"; } // Or replace with native `screenshot;`
     Mod+Escape hotkey-overlay-title="Lock the screen" { spawn "noctalia" "msg" "session" "lock"; }
     Mod+Shift+T hotkey-overlay-title="Activate Color Picker" { spawn "hyprpicker" "-a"; }
     Mod+Period hotkey-overlay-title="Launch emoji picker" { spawn "walker" "-m" "symbols"; }
