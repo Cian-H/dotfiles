@@ -15,12 +15,21 @@ hl.monitor({
     scale    = 1.2,
 })
 
+-- Match HP portrait monitor by description to preserve orientation across connector renames
 hl.monitor({
-    output    = "DP-6",
+    output    = "desc:HP Inc. HP E23 G4 CN41330H6Q",
     mode      = "1920x1080@60",
     position  = "auto",
-    scale     = "auto",
+    scale     = 1,
     transform = 3,
+})
+
+-- Match BenQ landscape monitor by description
+hl.monitor({
+    output   = "desc:BNQ BenQ GW2780 D4M0393001Q",
+    mode     = "1920x1080@60",
+    position = "auto",
+    scale    = 1,
 })
 
 hl.monitor({

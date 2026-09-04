@@ -17,15 +17,12 @@ capsule = true
 capsule_fill = "surface_variant"
 capsule_thickness = 0.76
 capsule_opacity = 1.0
-
-[bar.default.lanes]
 start = ["launcher", "clock", "sysmon", "active_window", "media"]
 center = ["workspaces"]
 end = [
   "privacy",
   "screenshot",
   "tray",
-  "cian-h/workday-progress:progress",
   "notifications",
   "battery",
   "volume",
@@ -33,6 +30,23 @@ end = [
   "keyboard_layout",
   "control-center",
 ]
+
+[bar.workday]
+enabled = false
+position = "right"
+thickness = 64
+margin_ends = 52
+margin_edge = 4
+padding = 0
+radius = 12
+reserve_space = true
+capsule = false
+start = []
+center = ["cian-h/workday-progress:progress"]
+end = []
+
+[bar.workday.monitor."HP Inc. HP E23 G4 CN41330H6Q"]
+enabled = true
 
 [bar.default.widgets.launcher]
 icon = "rocket"
