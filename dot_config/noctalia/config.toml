@@ -17,8 +17,8 @@ capsule = true
 capsule_fill = "surface_variant"
 capsule_thickness = 0.76
 capsule_opacity = 1.0
-start = ["launcher", "clock", "sysmon", "active_window", "media"]
-center = ["workspaces"]
+start = ["launcher", "workspaces", "sysmon", "active_window", "media"]
+center = ["clock"]
 end = [
   "privacy",
   "screenshot",
@@ -48,86 +48,23 @@ end = []
 [bar.workday.monitor."HP Inc. HP E23 G4 CN41330H6Q"]
 enabled = true
 
-[bar.default.widgets.launcher]
-icon = "rocket"
-colorize = true
-icon_color = "tertiary"
+[widget.launcher]
+glyph = "rocket"
 
-[bar.default.widgets.clock]
-format_horizontal = "HH:mm ddd, MMM dd"
-format_vertical = "HH mm - dd MM"
-tooltip_format = "HH:mm ddd, MMM dd"
+[widget.clock]
+format = "{:%H:%M %a, %b %d}"
+vertical_format = "{:%H %M - %d %m}"
+tooltip_format = "{:%H:%M %a, %b %d}"
 
-[bar.default.widgets.sysmon]
-compact = true
-show_cpu_usage = true
-show_cpu_temp = true
-show_memory_usage = true
-disk_path = "/"
+[widget.media]
+artist_first = true
+hide_when_no_media = true
 
-[bar.default.widgets.active_window]
-show_icon = true
-show_text = false
-max_width = 145
-scrolling_mode = "hover"
+[widget.volume]
+actions = { middle = "exec pwvucontrol || pavucontrol" }
 
-[bar.default.widgets.media]
-show_album_art = true
-show_artist_first = true
-show_progress_ring = true
-show_visualizer = true
-visualizer_type = "linear"
-max_width = 145
-scrolling_mode = "hover"
-
-[bar.default.widgets.workspaces]
-character_count = 2
-colorize_icons = true
-empty_color = "secondary"
-occupied_color = "secondary"
-focused_color = "primary"
-font_weight = "bold"
-label_mode = "index"
-pill_size = 0.6
-show_applications = true
-show_applications_hover = true
-show_badge = true
-show_labels_only_when_occupied = true
-enable_scroll_wheel = true
-
-[bar.default.widgets.privacy]
-active_color = "primary"
-enable_toast = true
-
-[bar.default.widgets.screenshot]
-
-[bar.default.widgets.tray]
-drawer_enabled = true
-hide_passive = false
-
-[bar.default.widgets.notifications]
-show_unread_badge = true
-unread_badge_color = "primary"
-
-[bar.default.widgets.battery]
-display_mode = "graphic-clean"
-hide_if_not_detected = true
-
-[bar.default.widgets.volume]
-display_mode = "onhover"
-middle_click_command = "pwvucontrol || pavucontrol"
-
-[bar.default.widgets.brightness]
-display_mode = "onhover"
-
-[bar.default.widgets.keyboard_layout]
-display_mode = "onhover"
-show_icon = true
-
-[bar.default.widgets.control_center]
-icon = "noctalia"
-use_distro_logo = true
-colorize_system_icon = "primary"
+[widget.control-center]
+glyph = "noctalia"
 
 [dock]
 enabled = true
@@ -150,7 +87,6 @@ pinned = ["firefox", "kitty"]
 [control_center]
 sidebar = "compact"
 width = 700
-position = "close_to_bar_button"
 
 [[control_center.shortcuts]]
 type = "wifi"
@@ -165,15 +101,11 @@ type = "audio"
 type = "dark_mode"
 
 [audio]
-preferred_player = "sone"
-volume_step = 5
 enable_overdrive = true
-volume_feedback = true
 
 [brightness]
-brightness_step = 5
-enable_ddc_support = true
-enforce_minimum = true
+enable_ddcutil = true
+minimum_brightness = 0.05
 
 [wallpaper]
 enabled = true
@@ -181,54 +113,55 @@ directory = "/home/cianh/Pictures/Wallpapers"
 fill_mode = "crop"
 transition_duration = 1500
 edge_smoothness = 0.05
-random_interval_sec = 300
-sort_order = "name"
-wallpaper_change_mode = "random"
 
 [wallpaper.default]
 path = "/home/cianh/Pictures/Wallpapers/wallhaven-l88xey.png"
 
-[idle]
+[wallpaper.automation]
 enabled = true
-lock_timeout = 660
-screen_off_timeout = 600
-suspend_timeout = 1800
-fade_duration = 5
+interval_seconds = 300
+order = "random"
 
-[notifications]
+[idle]
+behavior_order = ["lock", "screen-off", "suspend"]
+pre_action_fade_seconds = 5.0
+
+[idle.behavior.lock]
+timeout = 600
+action = "lock"
 enabled = true
-location = "top_right"
-low_urgency_duration = 3
-normal_urgency_duration = 8
-critical_urgency_duration = 15
-clear_dismissed = true
-enable_battery_toast = true
-enable_keyboard_layout_toast = true
-overlay_layer = true
+
+[idle.behavior.screen-off]
+timeout = 660
+action = "screen_off"
+enabled = true
+
+[idle.behavior.suspend]
+timeout = 1800
+action = "lock_and_suspend"
+enabled = true
+
+[notification]
+position = "top_right"
+layer = "overlay"
+history_retention_hours = 1
 
 [osd]
-enabled = true
-location = "top_right"
-auto_hide_ms = 2000
-overlay_layer = true
+position = "top_right"
+orientation = "horizontal"
 
 [shell]
-avatar_image = "/home/cianh/Pictures/face.png"
-language = "en-GB"
-lock_on_suspend = true
-compact_lock_screen = true
-enable_shadows = true
-show_session_buttons_on_lock_screen = true
+avatar_path = "/home/cianh/Pictures/face.png"
+lang = "en-GB"
 telemetry_enabled = false
 polkit_agent = true
+
+[lockscreen]
+lock_before_suspend = true
 
 [shell.panel]
 polkit_placement = "floating"
 polkit_position = "center"
-
-
-[system_monitor]
-external_monitor = "missioncenter"
 
 [plugins]
 enabled = [

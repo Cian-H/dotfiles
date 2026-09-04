@@ -12,12 +12,13 @@ local apps = {
     literatureManager = "zotero",
     localDocs         = "zeal",
     musicPlayer       = "sone",
+    controlCenter     = "noctalia msg panel-toggle control-center",
     bluetoothManager  = "noctalia msg panel-toggle control-center bluetooth",
     officeSuite       = "onlyoffice-desktopeditors",
     fileManager       = "thunar",
     perfMonitor       = "missioncenter",
     terminalBackup    = "kitty",
-    screenshot        = "hyprshot --mode region -o ~/Pictures/Screenshot/",
+    screenshot        = "hyprshot --mode region -o ~/Pictures/Screenshots/",
     lockscreen        = "noctalia msg session lock",
     powerMenu         = "noctalia msg panel-toggle session",
     colorpicker       = "hyprpicker -a",
@@ -29,22 +30,30 @@ local apps = {
 ---- 1. APPLICATION LAUNCHERS ----
 ---------------------------------
 
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(apps.menu))
-hl.bind(mainMod .. " + Q",     hl.dsp.exec_cmd(apps.terminal))
-hl.bind(mainMod .. " + W",     hl.dsp.exec_cmd(apps.browser))
-hl.bind(mainMod .. " + E",     hl.dsp.exec_cmd(apps.noteManager))
-hl.bind(mainMod .. " + R",     hl.dsp.exec_cmd(apps.literatureManager))
-hl.bind(mainMod .. " + T",     hl.dsp.exec_cmd(apps.localDocs))
-hl.bind(mainMod .. " + Y",     hl.dsp.exec_cmd(apps.musicPlayer))
-hl.bind(mainMod .. " + U",     hl.dsp.exec_cmd(apps.bluetoothManager))
-hl.bind(mainMod .. " + I",     hl.dsp.exec_cmd(apps.officeSuite))
-hl.bind(mainMod .. " + O",     hl.dsp.exec_cmd(apps.fileManager))
-hl.bind(mainMod .. " + P",     hl.dsp.exec_cmd(apps.perfMonitor))
-hl.bind(mainMod .. " + S",     hl.dsp.exec_cmd(apps.terminalBackup))
-hl.bind(mainMod .. " + D",     hl.dsp.exec_cmd(apps.noteManagerSearch))
+hl.bind(mainMod .. " + SPACE",     hl.dsp.exec_cmd(apps.menu))
+hl.bind(mainMod .. " + Q",         hl.dsp.exec_cmd(apps.terminal))
+hl.bind(mainMod .. " + W",         hl.dsp.exec_cmd(apps.browser))
+hl.bind(mainMod .. " + E",         hl.dsp.exec_cmd(apps.noteManager))
+hl.bind(mainMod .. " + R",         hl.dsp.exec_cmd(apps.literatureManager))
+hl.bind(mainMod .. " + T",         hl.dsp.exec_cmd(apps.localDocs))
+hl.bind(mainMod .. " + Y",         hl.dsp.exec_cmd(apps.musicPlayer))
+hl.bind(mainMod .. " + U",         hl.dsp.exec_cmd(apps.controlCenter))
+hl.bind(mainMod .. " + SHIFT + U", hl.dsp.exec_cmd(apps.bluetoothManager))
+hl.bind(mainMod .. " + I",         hl.dsp.exec_cmd(apps.officeSuite))
+hl.bind(mainMod .. " + O",         hl.dsp.exec_cmd(apps.fileManager))
+hl.bind(mainMod .. " + P",         hl.dsp.exec_cmd(apps.perfMonitor))
+hl.bind(mainMod .. " + S",         hl.dsp.exec_cmd(apps.terminalBackup))
+hl.bind(mainMod .. " + D",         hl.dsp.exec_cmd(apps.noteManagerSearch))
 
--- Launch default layout
-hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("[workspace 1 silent] " .. apps.browser .. " & [workspace 2 silent] " .. apps.terminal .. " & [workspace 3 silent] " .. apps.noteManager .. " & [workspace 3 silent] " .. apps.localDocs))
+-- Launch default layout across designated workspaces via hyprctl
+local defaultLayoutCmd = string.format(
+    'hyprctl dispatch exec "[workspace 1 silent] %s" && ' ..
+    'hyprctl dispatch exec "[workspace 2 silent] %s" && ' ..
+    'hyprctl dispatch exec "[workspace 3 silent] %s" && ' ..
+    'hyprctl dispatch exec "[workspace 3 silent] %s"',
+    apps.browser, apps.terminal, apps.noteManager, apps.localDocs
+)
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(defaultLayoutCmd))
 
 ----------------------------
 ---- 2. FUNCTION HOTKEYS ----
@@ -57,7 +66,7 @@ hl.bind(mainMod .. " + period",    hl.dsp.exec_cmd(apps.emojipicker))
 hl.bind(mainMod .. " + C",         hl.dsp.window.close())
 hl.bind(mainMod .. " + V",         hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + M",         hl.dsp.exec_cmd(apps.powerMenu))
-hl.bind(mainMod .. " + P",         hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + ALT + P",   hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + semicolon", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + A",         hl.dsp.exec_cmd(apps.cheatsheet))
 
