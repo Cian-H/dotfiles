@@ -39,6 +39,10 @@ window-rule {
 
 input {
     keyboard {
+        xkb {
+            layout "us,ie"
+            options "grp:alt_shift_toggle"
+        }
         numlock
     }
     touchpad {
