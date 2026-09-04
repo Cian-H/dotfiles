@@ -21,6 +21,10 @@
 [merge]
     conflictstyle = diff3
     tool = meld
+[pull]
+    rebase = true
+[push]
+    autoSetupRemote = true
 [interactive]
     diffFilter = delta --color-only
 [delta]

@@ -69,6 +69,7 @@ alias q='exit'
 alias :q='exit'
 alias c='clear'
 alias h='history'
+alias ls='eza --icons=always'
 alias lsa='ls -a'
 alias lsl='ls -l'
 alias lsla='ls -la'
@@ -130,6 +131,13 @@ if [ ! -d "$ZSH_SH_DIR" ]; then
     git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_SH_DIR" > /dev/null 2>&1
 fi
 [ -f "$ZSH_SH_DIR/zsh-syntax-highlighting.zsh" ] && source "$ZSH_SH_DIR/zsh-syntax-highlighting.zsh"
+
+ZSH_AS_DIR="$HOME/.local/share/zsh-autosuggestions"
+if [ ! -d "$ZSH_AS_DIR" ]; then
+    echo "Cloning zsh-autosuggestions..."
+    git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions "$ZSH_AS_DIR" > /dev/null 2>&1
+fi
+[ -f "$ZSH_AS_DIR/zsh-autosuggestions.zsh" ] && source "$ZSH_AS_DIR/zsh-autosuggestions.zsh"
 
 # Starship Prompt
 if command -v starship >/dev/null 2>&1; then
