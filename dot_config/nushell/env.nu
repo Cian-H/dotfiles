@@ -64,7 +64,7 @@ $env.LESS_TERMCAP_ue = (ansi --escape "0m")         # end underline
 $env.PATH = (
     $env.PATH
     | split row (char esep)
-    | append (
+    | prepend (
         open ($env.XDG_CONFIG_HOME | path join "path.env")
         | from csv --noheaders --trim all
         | get "column0"
