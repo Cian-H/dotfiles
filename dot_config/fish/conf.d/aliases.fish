@@ -17,6 +17,7 @@ if status is-interactive
     alias :q exit
     alias c clear
     alias h history
+    alias ls "eza --icons=always"
     alias lsa "ls -a"
     alias lsl "ls -l"
     alias lsla "ls -la"
@@ -31,6 +32,8 @@ if status is-interactive
     # Misc
     alias vim nvim
     alias vi nvim
+    alias raw-bash "/run/current-system/sw/bin/bash"
+    alias gnu-bash "/run/current-system/sw/bin/bash"
     alias nix-fish "nix-shell --command fish"
 
     abbr --add .. cd ..
