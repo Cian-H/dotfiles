@@ -115,12 +115,10 @@ transition_duration = 1500
 edge_smoothness = 0.05
 
 [wallpaper.default]
-path = "/home/cianh/Pictures/Wallpapers/wallhaven-l88xey.png"
+path = "/home/cianh/Pictures/Wallpapers/City_4.jpeg"
 
 [wallpaper.automation]
-enabled = true
-interval_seconds = 300
-order = "random"
+enabled = false
 
 [idle]
 behavior_order = ["lock", "screen-off", "suspend"]
