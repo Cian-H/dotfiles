@@ -92,6 +92,8 @@ alias jupyterpoem='poetry run jupyter'
 # Misc
 alias vim='nvim'
 alias vi='nvim'
+alias raw-bash='/run/current-system/sw/bin/bash'
+alias gnu-bash='/run/current-system/sw/bin/bash'
 alias nix-zsh='nix-shell --command zsh'
 
 # --- Functions ---

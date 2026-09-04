@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# 1. Non-interactive calls (scripts, subshells, pipelines) should ALWAYS use raw GNU Bash
+is_script=0
+for arg in "$@"; do
+    if [[ "$arg" == "-c" || "$arg" == "-s" ]]; then
+        is_script=1
+        break
+    fi
+done
+
+if [ ! -t 0 ] || [ ! -t 1 ] || [ "$is_script" -eq 1 ]; then
+    exec /run/current-system/sw/bin/bash "$@"
+fi
+
+# 2. If a script path argument was passed, run it with raw GNU Bash
+for arg in "$@"; do
+    if [[ "$arg" != -* ]]; then
+        if [ -f "$arg" ]; then
+            exec /run/current-system/sw/bin/bash "$@"
+        fi
+        break
+    fi
+done
+
+# 3. If NO_BRUSH is requested or brush is missing, fall back to raw GNU Bash
+if [[ -n "$NO_BRUSH" ]] || ! command -v brush >/dev/null 2>&1; then
+    exec /run/current-system/sw/bin/bash "$@"
+fi
+
+# 4. Interactive terminal session -> launch brush with syntax highlighting
+exec brush --enable-highlighting "$@"

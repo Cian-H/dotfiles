@@ -42,3 +42,4 @@ export alias vi = nvim
 
 # NixOS specific aliases
 export alias nix-nu = nix-shell --command nu
+export alias raw-bash = /run/current-system/sw/bin/bash
