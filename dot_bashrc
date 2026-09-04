@@ -1,5 +1,15 @@
 [[ $- != *i* ]] && return
 
+# If started from a minimal/non-readline bash (e.g. stdenv.shell introduced into PATH by nix-shell/direnv),
+# re-exec into the system's full interactive bash with Readline support.
+if ! builtin bind >/dev/null 2>&1; then
+    for _real_bash in /run/current-system/sw/bin/bash /usr/bin/bash /bin/bash; do
+        if [ -x "$_real_bash" ] && "$_real_bash" -c 'builtin bind' >/dev/null 2>&1; then
+            exec "$_real_bash" "$@"
+        fi
+    done
+fi
+
 shopt -s histappend
 shopt -s checkwinsize
 export HISTCONTROL=ignoreboth
