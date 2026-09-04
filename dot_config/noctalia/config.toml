@@ -206,6 +206,12 @@ compact_lock_screen = true
 enable_shadows = true
 show_session_buttons_on_lock_screen = true
 telemetry_enabled = false
+polkit_agent = true
+
+[shell.panel]
+polkit_placement = "floating"
+polkit_position = "center"
+
 
 [system_monitor]
 external_monitor = "missioncenter"
