@@ -66,6 +66,9 @@ actions = { middle = "exec pwvucontrol || pavucontrol" }
 [widget.control-center]
 glyph = "noctalia"
 
+[widget.network]
+show_label = false
+
 [dock]
 enabled = true
 position = "bottom"
