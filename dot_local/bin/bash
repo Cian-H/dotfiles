@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Find real system bash
 if [ -x /run/current-system/sw/bin/bash ]; then
