@@ -7,11 +7,17 @@ $env.config = (
 )
 # Initialise the plugins
 source nu_scripts.nu
-# initialise the external integrations
-source integrations/zoxide.nu
-source integrations/atuin.nu
-source integrations/rip.nu
-# Finally, we run a system info fetch
-if not (in-devenv?) {
-    sysfetch
+
+# Interactive-only integrations and startup routines
+if (is-terminal --stdin) and (is-terminal --stdout) {
+    # initialise the external integrations
+    source integrations/zoxide.nu
+    source integrations/atuin.nu
+    source integrations/rip.nu
+
+    # Finally, we run a system info fetch
+    if not (in-devenv?) {
+        sysfetch
+    }
 }
+

@@ -1,3 +1,5 @@
+[[ $- != *i* ]] && return
+
 # --- Environment Variables ---
 export EDITOR=nvim
 export GIT_EDITOR=nvim
@@ -9,8 +11,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PASSWORD_STORE_DIR="$HOME/.cache/password-store"
 export GLAMOUR_STYLE="$XDG_CONFIG_HOME/glamour/tokyo_night.json"
 
-if [[ "$(uname)" != "Windows_NT" ]]; then
-    export GPG_TTY=$(tty)
+if [[ "$(uname)" != "Windows_NT" ]] && [ -t 0 ]; then
+    export GPG_TTY=$(tty 2>/dev/null)
 fi
 
 # Manpage/Less Colors

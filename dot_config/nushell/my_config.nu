@@ -40,7 +40,7 @@ export def main [] {
             env_change: {
                 PWD: [
                     {|before, after| # This hook runs onefetch when entering a new git repository
-                        if (not (in-devenv?)) and ($after | path join ".git" | path exists) {
+                        if (not (in-devenv?)) and (is-terminal --stdout) and ($after | path join ".git" | path exists) {
                             let repo_root = (^git -C $after rev-parse --show-toplevel | str trim)
                             let last_repo = ($env | default "" __last_onefetch_repo | get __last_onefetch_repo)
                             if $repo_root != $last_repo {

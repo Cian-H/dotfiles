@@ -8,8 +8,8 @@ set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx PASSWORD_STORE_DIR "$HOME/.cache/password-store"
 set -gx GLAMOUR_STYLE "$XDG_CONFIG_HOME/glamour/tokyo_night.json"
 
-if test (uname) != "Windows_NT"
-    set -gx GPG_TTY (tty)
+if test (uname) != "Windows_NT" -a -t 0
+    set -gx GPG_TTY (tty 2>/dev/null)
 end
 
 set -gx LESS_TERMCAP_mb (printf "\e[01;31m")

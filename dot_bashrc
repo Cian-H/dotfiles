@@ -28,8 +28,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PASSWORD_STORE_DIR="$HOME/.cache/password-store"
 export GLAMOUR_STYLE="$XDG_CONFIG_HOME/glamour/tokyo_night.json"
 
-if [[ "$(uname)" != "Windows_NT" ]]; then
-    export GPG_TTY=$(tty)
+if [[ "$(uname)" != "Windows_NT" ]] && [ -t 0 ]; then
+    export GPG_TTY=$(tty 2>/dev/null)
 fi
 
 export LESS_TERMCAP_mb=$'\e[01;31m'
@@ -98,7 +98,7 @@ alias nix-bash='nix-shell --command bash'
 
 cd() {
     builtin cd "$@" || return
-    if [ -d .git ] && command -v onefetch >/dev/null 2>&1; then
+    if [ -d .git ] && [ -t 1 ] && command -v onefetch >/dev/null 2>&1; then
         onefetch --nerd-fonts
     fi
 }

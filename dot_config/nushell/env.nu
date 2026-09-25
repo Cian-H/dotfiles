@@ -46,8 +46,8 @@ $env.MAKEFLAGS = $"-j((nproc | into int) + 1)"
 $env.JULIA_NUM_THREADS = $"(nproc)"
 $env.YAOURT_COLORS = "nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 $env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
-if $nu.os-info.name != "windows" {
-    $env.GPG_TTY = $"(/usr/bin/env tty)"
+if $nu.os-info.name != "windows" and (is-terminal --stdin) {
+    $env.GPG_TTY = (try { /usr/bin/env tty } catch { "" })
 }
 $env.PASSWORD_STORE_DIR = $"($env.HOME)/.cache/password-store"
 $env.GLAMOUR_STYLE = $"($env.XDG_CONFIG_HOME)/glamour/tokyo_night.json"
