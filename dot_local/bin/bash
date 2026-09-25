@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# Find real system bash
+if [ -x /run/current-system/sw/bin/bash ]; then
+    REAL_BASH=/run/current-system/sw/bin/bash
+elif [ -x /usr/bin/bash ]; then
+    REAL_BASH=/usr/bin/bash
+else
+    REAL_BASH=/bin/bash
+fi
+
 # 1. Non-interactive calls (scripts, subshells, pipelines) should ALWAYS use raw GNU Bash
 is_script=0
 for arg in "$@"; do
@@ -10,14 +19,14 @@ for arg in "$@"; do
 done
 
 if [ ! -t 0 ] || [ ! -t 1 ] || [ "$is_script" -eq 1 ]; then
-    exec /run/current-system/sw/bin/bash "$@"
+    exec "$REAL_BASH" "$@"
 fi
 
 # 2. If a script path argument was passed, run it with raw GNU Bash
 for arg in "$@"; do
     if [[ "$arg" != -* ]]; then
         if [ -f "$arg" ]; then
-            exec /run/current-system/sw/bin/bash "$@"
+            exec "$REAL_BASH" "$@"
         fi
         break
     fi
@@ -25,7 +34,7 @@ done
 
 # 3. If NO_BRUSH is requested or brush is missing, fall back to raw GNU Bash
 if [[ -n "$NO_BRUSH" ]] || ! command -v brush >/dev/null 2>&1; then
-    exec /run/current-system/sw/bin/bash "$@"
+    exec "$REAL_BASH" "$@"
 fi
 
 # 4. Interactive terminal session -> launch brush with syntax highlighting
