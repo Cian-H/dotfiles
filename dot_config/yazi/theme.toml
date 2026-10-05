@@ -68,6 +68,6 @@ prepend_dirs = [
     { name = "Zotero", text = "", fg = "#cc0000" },
 ]
 prepend_globs = [
-    { name = "*_cache", text = "", fg = "#899499" },
-    { name = "*_history", text = "󰋚", fg = "#899499" },
+    { url = "*_cache", text = "", fg = "#899499" },
+    { url = "*_history", text = "󰋚", fg = "#899499" },
 ]
