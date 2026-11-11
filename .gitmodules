@@ -46,3 +46,9 @@
 [submodule "dot_config/emacs"]
 	path = dot_config/emacs
 	url = https://github.com/Cian-H/my_emacs_config
+[submodule "dot_config/noctalia/plugins-custom/workday-progress"]
+	path = dot_config/noctalia/plugins-custom/workday-progress
+	url = https://github.com/Cian-H/workday-progress
+[submodule "dot_config/noctalia/plugins-repo"]
+	path = dot_config/noctalia/plugins-repo
+	url = https://github.com/noctalia-dev/noctalia-plugins.git
