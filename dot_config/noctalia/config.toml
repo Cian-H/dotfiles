@@ -1,7 +1,7 @@
 [theme]
 mode = "dark"
-source = "custom"
-custom_palette = "Tokyo-Night"
+source = "builtin"
+builtin = "Tokyo-Night"
 
 [bar.default]
 position = "top"
