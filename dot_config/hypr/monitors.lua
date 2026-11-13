@@ -31,10 +31,3 @@ hl.monitor({
     position = "auto",
     scale    = 1,
 })
-
-hl.monitor({
-    output   = "DP-4",
-    mode     = "2560x1440@144",
-    position = "auto-left",
-    scale    = "auto",
-})
