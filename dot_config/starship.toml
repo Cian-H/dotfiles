@@ -43,6 +43,16 @@ show_always = true
 [package]
 disabled = true
 
+# Disable cloud credential/context trackers
+[gcloud]
+disabled = true
+
+[azure]
+disabled = true
+
+[openstack]
+disabled = true
+
 # Finally, manually add slightly modified settings from the nerdfonts preset config
 [aws]
 disabled = true
